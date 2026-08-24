@@ -112,7 +112,7 @@ export default function AccountsPage() {
     () => {
 
       const onboardingFromQuery = searchParams.get("onboarding") === "1";
-      const onboardingFromSession = sessionStorage.getItem("ritnavOnboarding") === "1";
+      const onboardingFromSession = sessionStorage.getItem("ritmailer_onboarding") || sessionStorage.getItem("ritnavOnboarding") === "1";
       setOnboarding(onboardingFromQuery || onboardingFromSession);
 
       const status = searchParams.get("status");
@@ -374,14 +374,14 @@ export default function AccountsPage() {
               type="button"
               className="btn btn-primary"
               disabled={loading || accounts.length === 0}
-              onClick={() => { sessionStorage.removeItem("ritnavOnboarding"); router.push("/settings/ai?onboarding=1"); }}
+              onClick={() => { sessionStorage.removeItem("ritmailer_onboarding"); sessionStorage.removeItem("ritnavOnboarding"); router.push("/settings/ai?onboarding=1"); }}
             >
               Continue to AI Setup →
             </button>
             <button
               type="button"
               className="btn btn-secondary"
-              onClick={() => { sessionStorage.removeItem("ritnavOnboarding"); router.push("/"); }}
+              onClick={() => { sessionStorage.removeItem("ritmailer_onboarding"); sessionStorage.removeItem("ritnavOnboarding"); router.push("/"); }}
             >
               Go to Home
             </button>

@@ -1,5 +1,5 @@
 {
-  "name": "ritnav-mailer-frontend",
+  "name": "ritmailer-frontend",
   "private": true,
   "scripts": {
     "dev": "next dev",

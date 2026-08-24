@@ -32,7 +32,7 @@ export default function GmailSettingsPage() {
 
       const response =
         await fetch(
-          "http://127.0.0.1:8000/api/gmail/status"
+          "/api/gmail/status"
         );
 
       const data =
@@ -66,7 +66,7 @@ export default function GmailSettingsPage() {
     try {
 
       await fetch(
-        "http://127.0.0.1:8000/api/gmail/disconnect",
+        "/api/gmail/disconnect",
         {
           method: "POST",
         }
@@ -91,7 +91,7 @@ export default function GmailSettingsPage() {
   function connect() {
 
     window.location.href =
-      "http://127.0.0.1:8000/api/gmail/connect";
+      "/api/gmail/connect";
 
   }
 
@@ -123,7 +123,7 @@ export default function GmailSettingsPage() {
               </h1>
 
               <p className="page-description">
-                Connect the Gmail account that Ritnav Mailer will use to send campaigns.
+                Connect the Gmail account that Ritmailer will use to send campaigns.
               </p>
 
             </div>
@@ -239,7 +239,7 @@ export default function GmailSettingsPage() {
 
                 <br />
 
-                Ritnav Mailer requests permission to send
+                Ritmailer requests permission to send
                 email through the Gmail account you explicitly
                 connect. It does not ask for your Gmail password.
 
@@ -272,7 +272,7 @@ function Sidebar() {
         <div>
 
           <div className="brand-name">
-            Ritnav
+            Ritmailer
           </div>
 
           <div className="brand-subtitle">

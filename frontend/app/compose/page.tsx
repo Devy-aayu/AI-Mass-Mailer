@@ -775,7 +775,7 @@ export default function ComposePage() {
 We would like to offer you a free demo of our services.
 
 Best regards,
-Ritnav`}
+Ritmailer`}
                     />
 
 
@@ -1780,7 +1780,7 @@ function Sidebar() {
         <div>
 
           <div className="brand-name">
-            Ritnav
+            Ritmailer
           </div>
 
           <div className="brand-subtitle">

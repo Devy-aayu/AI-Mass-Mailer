@@ -3,8 +3,8 @@ import "./globals.css";
 import AuthGate from "../components/AuthGate";
 
 export const metadata: Metadata = {
-  title: "Ritnav Mailer",
-  description: "Multi-user email campaign manager",
+  title: "Ritmailer",
+  description: "Deliberate email campaigns, personalization and delivery replay.",
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {

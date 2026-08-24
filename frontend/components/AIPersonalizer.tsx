@@ -326,7 +326,7 @@ export default function AIPersonalizer({
             }
             placeholder={`Example:
 
-Ritnav provides website development, AI automation and custom software solutions for small and medium businesses.
+Ritmailer provides website development, AI automation and custom software solutions for small and medium businesses.
 
 Our goal is to start a genuine business conversation and offer a short introductory consultation.
 
