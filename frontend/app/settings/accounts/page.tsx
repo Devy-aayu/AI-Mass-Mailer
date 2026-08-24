@@ -112,7 +112,7 @@ export default function AccountsPage() {
     () => {
 
       const onboardingFromQuery = searchParams.get("onboarding") === "1";
-      const onboardingFromSession = sessionStorage.getItem("ritmailer_onboarding") || sessionStorage.getItem("ritnavOnboarding") === "1";
+      const onboardingFromSession = sessionStorage.getItem("ritmailer_onboarding") === "1" || sessionStorage.getItem("ritnavOnboarding") === "1";
       setOnboarding(onboardingFromQuery || onboardingFromSession);
 
       const status = searchParams.get("status");
