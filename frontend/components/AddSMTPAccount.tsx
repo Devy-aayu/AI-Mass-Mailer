@@ -337,7 +337,7 @@ export default function AddSMTPAccount({
               event.target.value
             )
           }
-          placeholder="Ritnav Sales"
+          placeholder="Ritmailer Sales"
         />
 
       </div>

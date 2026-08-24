@@ -1,6 +1,4 @@
-const API_URL =
-  process.env.NEXT_PUBLIC_API_URL ||
-  "http://localhost:8000";
+const API_URL = "";
 
 
 /* =========================================================
@@ -708,6 +706,18 @@ export type AuthUser = {
   name: string;
 };
 
+export class ApiError extends Error {
+  status: number;
+  detail: unknown;
+
+  constructor(message: string, status: number, detail: unknown = null) {
+    super(message);
+    this.name = "ApiError";
+    this.status = status;
+    this.detail = detail;
+  }
+}
+
 async function apiJson<T>(url: string, options: RequestInit = {}): Promise<T> {
   const response = await fetch(url, {
     ...options,
@@ -719,7 +729,11 @@ async function apiJson<T>(url: string, options: RequestInit = {}): Promise<T> {
     cache: "no-store",
   });
   const data = await response.json().catch(() => ({}));
-  if (!response.ok) throw new Error(data.detail || "Request failed.");
+  if (!response.ok) {
+    const detail = data?.detail;
+    const message = typeof detail === "string" ? detail : "Request failed.";
+    throw new ApiError(message, response.status, detail);
+  }
   return data as T;
 }
 
