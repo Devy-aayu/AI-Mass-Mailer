@@ -892,7 +892,7 @@ function Sidebar() {
         <div>
 
           <div className="brand-name">
-            Ritnav
+            Ritmailer
           </div>
 
           <div className="brand-subtitle">
@@ -992,7 +992,7 @@ function Topbar({
               fontWeight: 700,
             }}
           >
-            Ritnav
+            Ritmailer
           </div>
 
           <div

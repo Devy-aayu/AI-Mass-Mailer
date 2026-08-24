@@ -2,11 +2,13 @@
 
 import Link from "next/link";
 import { FormEvent, useState } from "react";
-import { useRouter } from "next/navigation";
+import { useRouter, useSearchParams } from "next/navigation";
 import { getCurrentUser, login } from "../../lib/api";
 
 export default function LoginPage() {
   const router = useRouter();
+  const searchParams = useSearchParams();
+  const next = searchParams.get("next") || "/";
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
@@ -17,9 +19,9 @@ export default function LoginPage() {
     setError("");
     setLoading(true);
     try {
-      await login(email, password);
+      await login(email.trim(), password);
       const me = await getCurrentUser();
-      router.replace(me.user ? "/" : "/login");
+      router.replace(me.user ? next : "/login");
     } catch (e) {
       setError(e instanceof Error ? e.message : "Login failed.");
     } finally {
@@ -28,90 +30,28 @@ export default function LoginPage() {
   }
 
   return (
-    <AuthShell
-      title="Welcome back"
-      subtitle="Sign in to manage your email campaigns."
-    >
-      <form onSubmit={submit}>
-        <div className="field">
-          <label className="field-label">Email</label>
-          <input
-            className="input"
-            type="email"
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
-            required
-          />
+    <main className="auth-page">
+      <section className="auth-aside">
+        <div>
+          <div className="auth-brand">RITMAILER</div>
+          <h2>Every send should have a reason.</h2>
+          <p>Ritmailer keeps lead import, personalization, delivery and campaign history in one deliberate workspace.</p>
         </div>
-        <div className="field">
-          <label className="field-label">Password</label>
-          <input
-            className="input"
-            type="password"
-            value={password}
-            onChange={(e) => setPassword(e.target.value)}
-            required
-          />
+        <span className="auth-stamp">Campaign control · built for real sends</span>
+      </section>
+      <section className="auth-form-side">
+        <div className="auth-panel">
+          <div className="eyebrow">Welcome back</div>
+          <h1>Sign in</h1>
+          <p>Open your campaign workspace and continue where you left off.</p>
+          <form onSubmit={submit}>
+            <div className="field"><label className="field-label">Email</label><input className="input" type="email" value={email} onChange={(e) => setEmail(e.target.value)} autoComplete="email" required /></div>
+            <div className="field"><label className="field-label">Password</label><input className="input" type="password" value={password} onChange={(e) => setPassword(e.target.value)} autoComplete="current-password" required /></div>
+            {error && <div className="auth-error">{error}</div>}
+            <button className="btn btn-primary" style={{ width: "100%" }} disabled={loading}>{loading ? "Signing in…" : "Sign in"}</button>
+            <p className="auth-footer">New here? <Link href="/signup">Create an account</Link></p>
+          </form>
         </div>
-        {error && <div className="auth-error">{error}</div>}
-        <button
-          className="btn btn-primary"
-          style={{ width: "100%" }}
-          disabled={loading}
-        >
-          {loading ? "Signing in..." : "Sign in"}
-        </button>
-        <p className="auth-footer">
-          New here? <Link href="/signup">Create an account</Link>
-        </p>
-      </form>
-    </AuthShell>
-  );
-}
-
-function AuthShell({
-  title,
-  subtitle,
-  children,
-}: {
-  title: string;
-  subtitle: string;
-  children: React.ReactNode;
-}) {
-  return (
-    <main
-      style={{
-        minHeight: "100vh",
-        display: "grid",
-        placeItems: "center",
-        padding: 24,
-        background: "#f7f7f7",
-      }}
-    >
-      <section
-        style={{
-          width: "100%",
-          maxWidth: 420,
-          background: "#fff",
-          border: "1px solid #e7e7e7",
-          borderRadius: 16,
-          padding: 28,
-        }}
-      >
-        <div style={{ marginBottom: 24 }}>
-          <div
-            style={{
-              fontSize: 12,
-              letterSpacing: 1.8,
-              fontWeight: 800,
-            }}
-          >
-            RITNAV MAILER
-          </div>
-          <h1 style={{ margin: "10px 0 6px", fontSize: 28 }}>{title}</h1>
-          <p style={{ margin: 0, color: "#777", fontSize: 13 }}>{subtitle}</p>
-        </div>
-        {children}
       </section>
     </main>
   );

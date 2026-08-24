@@ -123,7 +123,7 @@ export default function GmailSettingsPage() {
               </h1>
 
               <p className="page-description">
-                Connect the Gmail account that Ritnav Mailer will use to send campaigns.
+                Connect the Gmail account that Ritmailer will use to send campaigns.
               </p>
 
             </div>
@@ -239,7 +239,7 @@ export default function GmailSettingsPage() {
 
                 <br />
 
-                Ritnav Mailer requests permission to send
+                Ritmailer requests permission to send
                 email through the Gmail account you explicitly
                 connect. It does not ask for your Gmail password.
 
@@ -272,7 +272,7 @@ function Sidebar() {
         <div>
 
           <div className="brand-name">
-            Ritnav
+            Ritmailer
           </div>
 
           <div className="brand-subtitle">
