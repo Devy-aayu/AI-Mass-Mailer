@@ -68,9 +68,9 @@ def _set_session(
     response: Response,
     user_id: str,
 ) -> None:
-    # Modern browsers require cookies with samesite="none" to also be Secure.
-    # For local development over HTTP, use "lax" so the cookie is accepted.
-    samesite_val = "none" if AUTH_COOKIE_SECURE else "lax"
+    # The browser now talks to FastAPI through Ritmailer's same-origin Next.js
+    # proxy, so a first-party Lax cookie is both safer and sufficient.
+    samesite_val = "lax"
 
     response.set_cookie(
         key=AUTH_COOKIE_NAME,
@@ -81,9 +81,8 @@ def _set_session(
         secure=AUTH_COOKIE_SECURE,
 
         # IMPORTANT:
-        # Frontend and backend are on different sites/domains. Use "none" only when
-        # the cookie is being sent over HTTPS (AUTH_COOKIE_SECURE=True). Otherwise
-        # use "lax" so browsers accept the cookie during local development.
+        # The cookie is scoped to the Ritmailer frontend origin by the Next.js proxy.
+        # Lax blocks cross-site POST-based CSRF while still supporting normal navigation.
         samesite=samesite_val,
 
         max_age=60 * 60 * 24 * 7,
