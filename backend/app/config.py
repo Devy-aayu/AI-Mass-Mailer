@@ -13,10 +13,12 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 load_dotenv(BASE_DIR / ".env")
 
 
-FRONTEND_URL = os.getenv(
-    "FRONTEND_URL",
-    "http://localhost:3000",
-).rstrip("/")
+VERCEL_URL = os.getenv("VERCEL_URL", "").strip().rstrip("/")
+
+FRONTEND_URL = (
+    os.getenv("FRONTEND_URL", "").strip().rstrip("/")
+    or (f"https://{VERCEL_URL}" if VERCEL_URL else "http://localhost:3000")
+)
 
 
 # ---------------------------------------------------------------------------
@@ -35,7 +37,7 @@ GOOGLE_CLIENT_SECRET = os.getenv(
 
 GOOGLE_REDIRECT_URI = os.getenv(
     "GOOGLE_REDIRECT_URI",
-    "http://localhost:8000/api/gmail/callback",
+    f"{FRONTEND_URL}/api/gmail/callback",
 )
 
 
@@ -124,11 +126,8 @@ AUTH_COOKIE_NAME = os.getenv(
 )
 
 AUTH_COOKIE_SECURE = (
-    os.getenv(
-        "AUTH_COOKIE_SECURE",
-        "false",
-    ).lower()
-    == "true"
+    os.getenv("AUTH_COOKIE_SECURE", "").lower() == "true"
+    or os.getenv("VERCEL", "").lower() == "1"
 )
 
 
@@ -148,7 +147,7 @@ MICROSOFT_CLIENT_SECRET = os.getenv(
 
 MICROSOFT_REDIRECT_URI = os.getenv(
     "MICROSOFT_REDIRECT_URI",
-    "http://localhost:8000/api/accounts/outlook/callback",
+    f"{FRONTEND_URL}/api/accounts/outlook/callback",
 )
 
 MICROSOFT_AUTHORITY = os.getenv(
@@ -182,7 +181,7 @@ ZOHO_CLIENT_SECRET = os.getenv(
 
 ZOHO_REDIRECT_URI = os.getenv(
     "ZOHO_REDIRECT_URI",
-    "http://localhost:8000/api/accounts/zoho/callback",
+    f"{FRONTEND_URL}/api/accounts/zoho/callback",
 )
 
 ZOHO_ACCOUNTS_URL = os.getenv(
