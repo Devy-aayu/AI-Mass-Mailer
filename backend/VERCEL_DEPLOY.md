@@ -10,14 +10,3 @@
 
 The frontend must set `NEXT_PUBLIC_API_URL` to this backend URL.
 Authentication uses a backend-owned HTTP-only cookie with `Secure` + `SameSite=None` in production. The frontend must use `credentials: include` (already present).
-
-## Ritmailer frontend proxy
-
-The browser should not call this backend directly in production. Deploy the Next.js frontend with:
-
-- `BACKEND_URL=https://<your-fastapi-domain>`
-- Remove `NEXT_PUBLIC_API_URL` from the frontend project.
-
-All browser requests go through the frontend `/api/*` proxy. This keeps the session cookie first-party and avoids cross-origin credential/CORS failures during signup and login.
-
-Use PostgreSQL/Neon for `DATABASE_URL` in the backend production environment; do not rely on the serverless filesystem for persistent users or campaigns.
