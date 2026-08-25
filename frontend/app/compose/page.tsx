@@ -36,19 +36,12 @@ export default function ComposePage() {
   const router = useRouter();
 
 
-  /* =========================================================
-     LEADS
-  ========================================================= */
-
+ 
   const [
     leads,
     setLeads,
   ] = useState<Lead[]>([]);
 
-
-  /* =========================================================
-     STANDARD EMAIL
-  ========================================================= */
 
   const [
     subject,
@@ -62,10 +55,7 @@ export default function ComposePage() {
   ] = useState("");
 
 
-  /* =========================================================
-     AI EMAILS
-  ========================================================= */
-
+ 
   const [
     aiEmails,
     setAiEmails,
@@ -74,9 +64,6 @@ export default function ComposePage() {
   );
 
 
-  /* =========================================================
-     EDITING STATE
-  ========================================================= */
 
   const [
     editingIndex,
@@ -86,9 +73,6 @@ export default function ComposePage() {
   );
 
 
-  /* =========================================================
-     PREVIEW
-  ========================================================= */
 
   const [
     showAIEmails,
@@ -96,9 +80,6 @@ export default function ComposePage() {
   ] = useState(true);
 
 
-  /* =========================================================
-     LOAD LEADS
-  ========================================================= */
 
   useEffect(() => {
 
@@ -138,12 +119,7 @@ export default function ComposePage() {
       }
 
 
-      /*
-       * The uploader keeps phone-only leads.
-       *
-       * Compose is an email campaign, therefore
-       * only email-capable leads are loaded here.
-       */
+      
 
       const emailLeads =
         parsed.filter(
@@ -181,10 +157,6 @@ export default function ComposePage() {
       );
 
 
-      /*
-       * Restore AI-generated emails
-       * if the user comes back to this page.
-       */
 
       const storedAI =
         sessionStorage.getItem(
@@ -239,10 +211,7 @@ export default function ComposePage() {
   }, [router]);
 
 
-  /* =========================================================
-     STANDARD NAME INSERTION
-  ========================================================= */
-
+  
   function insertName() {
 
     setMessage(
@@ -255,18 +224,13 @@ export default function ComposePage() {
   }
 
 
-  /* =========================================================
-     AI GENERATED CALLBACK
-  ========================================================= */
+
 
   function handleAIGenerated(
     emails: AIGeneratedEmail[]
   ) {
 
-    /*
-     * Make a fresh array so React gets
-     * a new immutable state value.
-     */
+    
 
     const copied =
       emails.map(
@@ -302,9 +266,7 @@ export default function ComposePage() {
   }
 
 
-  /* =========================================================
-     UPDATE ONE AI EMAIL
-  ========================================================= */
+  
 
   function updateAIEmail(
     index: number,
@@ -327,12 +289,7 @@ export default function ComposePage() {
         };
 
 
-        /*
-         * Save every edit immediately.
-         *
-         * This means the sending page always receives
-         * the latest edited version.
-         */
+        
 
         sessionStorage.setItem(
           "ritnavPersonalizedEmails",
@@ -348,10 +305,6 @@ export default function ComposePage() {
 
   }
 
-
-  /* =========================================================
-     DISABLE AI MODE
-  ========================================================= */
 
   function disableAIMode() {
 
@@ -378,9 +331,7 @@ export default function ComposePage() {
   }
 
 
-  /* =========================================================
-     SEND AI EMAILS
-  ========================================================= */
+
 
   function sendAIGeneratedEmails() {
 
@@ -396,10 +347,7 @@ export default function ComposePage() {
     }
 
 
-    /*
-     * Make sure every generated email has the required
-     * information before proceeding.
-     */
+   
 
     const invalid =
       aiEmails.find(
@@ -420,9 +368,7 @@ export default function ComposePage() {
     }
 
 
-    /*
-     * Ensure the latest edited version is stored.
-     */
+   
 
     sessionStorage.setItem(
       "ritnavPersonalizedEmails",
@@ -438,10 +384,7 @@ export default function ComposePage() {
     );
 
 
-    /*
-     * Store the regular campaign too.
-     * This keeps the sending page compatible.
-     */
+  
 
     sessionStorage.setItem(
       "ritnavSubject",
@@ -455,13 +398,7 @@ export default function ComposePage() {
     );
 
 
-    /*
-     * Go to the existing sending page.
-     *
-     * The sending page should read ritnavPersonalizedEmails
-     * and call /api/send with personalized_emails.
-     */
-
+    
     router.push(
       "/sending"
     );
@@ -469,9 +406,7 @@ export default function ComposePage() {
   }
 
 
-  /* =========================================================
-     STANDARD CAMPAIGN
-  ========================================================= */
+  
 
   async function continueStandardCampaign() {
 
@@ -554,9 +489,6 @@ export default function ComposePage() {
   }
 
 
-  /* =========================================================
-     STANDARD PREVIEW
-  ========================================================= */
 
   function previewMessage() {
 
@@ -592,9 +524,6 @@ export default function ComposePage() {
   }
 
 
-  /* =========================================================
-     RENDER
-  ========================================================= */
 
   return (
 
@@ -1469,7 +1398,7 @@ Ritmailer`}
                             sendAIGeneratedEmails
                           }
                         >
-                          ✨ Send AI Generated Mails →
+                           Send AI Generated Mails 
                         </button>
 
                       </div>
