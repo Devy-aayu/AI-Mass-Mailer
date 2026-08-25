@@ -1,6 +1,6 @@
 #  RitMailer
 
-> A modern bulk email automation platform built for fast, reliable, and scalable outreach.
+ A modern bulk email automation platform built for fast, reliable, and scalable outreach.
 
 ##  Highlights
 
@@ -20,30 +20,30 @@
 ## Tech Stack
 
 **Frontend**
-- Next.js
-- React
-- Tailwind CSS
+ Next.js
+ React
+ Tailwind CSS
 
 **Backend**
-- Python
-- FastAPI
+ Python
+ FastAPI
 
 **Integrations**
-- Gmail API
-- Google OAuth 2.0
+ Gmail API
+ Google OAuth 2.0
 
 **Data**
-- CSV
-- Excel
+ CSV
+ Excel
 
 ## Use Cases
 
-- Cold email outreach
-- Lead generation campaigns
-- Business outreach
-- Sales automation
-- Marketing campaigns
-- Client acquisition
-- Personalized bulk emailing
+ Cold email outreach
+ Lead generation campaigns
+ Business outreach
+ Sales automation
+ Marketing campaigns
+ Client acquisition
+ Personalized bulk emailing
 
-## USES AI to analyse the leads and understand about them and if u provide info like website of cient in data it understands it visit the site or the provided data look for detials and then use it to compose more preosnalised mail to connect and build strong connection with clients
+## Uses AI to analyse the leads and understand about them and if u provide info like website of cient in data it understands it visit the site or the provided data look for detials and then use it to compose more preosnalised mail to connect and build strong connection with clients
