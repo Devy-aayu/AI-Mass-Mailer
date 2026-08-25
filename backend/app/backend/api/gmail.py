@@ -17,12 +17,8 @@ router = APIRouter(
 )
 
 
-FRONTEND_URL = "http://localhost:3000"
+FRONTEND_URL = "https://ritmailer.vercel.app"
 
-
-# ============================================================
-# CONNECT
-# ============================================================
 
 @router.get("/connect")
 async def connect_gmail():
@@ -46,11 +42,6 @@ async def connect_gmail():
             status_code=500,
             detail=str(error),
         )
-
-
-# ============================================================
-# CALLBACK
-# ============================================================
 
 @router.get("/callback")
 async def gmail_callback(
@@ -136,10 +127,6 @@ async def gmail_callback(
         )
 
 
-# ============================================================
-# STATUS
-# ============================================================
-
 @router.get("/status")
 async def gmail_status():
 
@@ -150,9 +137,6 @@ async def gmail_status():
     }
 
 
-# ============================================================
-# DISCONNECT
-# ============================================================
 
 @router.post("/disconnect")
 async def gmail_disconnect():
