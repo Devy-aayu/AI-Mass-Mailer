@@ -11,16 +11,10 @@ app = FastAPI(
     version="1.0.0",
 )
 
-
-# ------------------------------------------------------------------
-# CORS
-# ------------------------------------------------------------------
-
-
 app.add_middleware(
     CORSMiddleware,
     allow_origins=[
-        "http://localhost:3000",
+        "http://localhost:3000","https://ritmailer.vercel.app"
     ],
     allow_credentials=True,
     allow_methods=[
@@ -36,11 +30,6 @@ app.add_middleware(
     ],
 )
 
-
-# ------------------------------------------------------------------
-# API Routers
-# ------------------------------------------------------------------
-
 app.include_router(
     upload_router,
 )
@@ -54,9 +43,6 @@ app.include_router(
 )
 
 
-# ------------------------------------------------------------------
-# Health / Root
-# ------------------------------------------------------------------
 
 @app.get("/")
 async def root():
