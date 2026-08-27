@@ -576,7 +576,7 @@ export default function ComposePage() {
                   650,
               }}
             >
-              ✓ {leads.length} email recipients
+              OK {leads.length} email recipients
             </div>
 
           </div>
@@ -758,7 +758,7 @@ Ritmailer`}
                         )
                       }
                     >
-                      ← Back to Leads
+                      Back Back to Leads
                     </button>
 
 
@@ -792,7 +792,7 @@ Ritmailer`}
                             continueStandardCampaign
                           }
                         >
-                          Review & Send →
+                          Review & Send
                         </button>
 
                       )}
@@ -1119,7 +1119,7 @@ Ritmailer`}
                                     >
                                       {isEditing
                                         ? "Done"
-                                        : "✎ Edit"}
+                                        : "Edit Edit"}
                                     </button>
 
                                   </div>
@@ -1645,7 +1645,7 @@ Ritmailer`}
                 ) : (
 
                   <>
-                    ✓{" "}
+                    OK{" "}
                     {
                       leads.length
                     }{" "}
@@ -1709,7 +1709,7 @@ function Sidebar() {
           className="nav-item"
         >
           <span className="nav-icon">
-            ⌂
+            Home
           </span>
 
           <span>
@@ -1723,7 +1723,7 @@ function Sidebar() {
           className="nav-item active"
         >
           <span className="nav-icon">
-            ↑
+            New
           </span>
 
           <span>

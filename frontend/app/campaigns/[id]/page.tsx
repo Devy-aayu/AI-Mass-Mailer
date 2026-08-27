@@ -28,13 +28,13 @@ export default function CampaignDetailPage() {
   const sequence = buildReplaySequence(campaign);
 
   if (loading) return <Shell title="Campaign"><div className="page"><div className="card"><div className="card-body">Loading campaign…</div></div></div></Shell>;
-  if (error || !campaign) return <Shell title="Campaign"><div className="page"><div className="auth-error">{error || "Campaign not found."}</div><Link href="/" className="btn btn-secondary">← Back to overview</Link></div></Shell>;
+  if (error || !campaign) return <Shell title="Campaign"><div className="page"><div className="auth-error">{error || "Campaign not found."}</div><Link href="/" className="btn btn-secondary">Back Back to overview</Link></div></Shell>;
 
   return <Shell title={campaign.name}>
     <main className="page">
       <div className="page-header">
         <div>
-          <Link href="/" style={{ color: "var(--muted)", fontSize: 11, fontWeight: 800, letterSpacing: ".05em", textTransform: "uppercase" }}>← Overview</Link>
+          <Link href="/" style={{ color: "var(--muted)", fontSize: 11, fontWeight: 800, letterSpacing: ".05em", textTransform: "uppercase" }}>Back Overview</Link>
           <div className="eyebrow" style={{ marginTop: 18 }}>Campaign report</div>
           <h1 className="page-title">{campaign.name}</h1>
           <p className="page-description">{campaign.subject || "Campaign messages"}</p>
@@ -119,4 +119,4 @@ function buildReplaySequence(campaign: (Campaign & { leads: CampaignLead[] }) | 
 function formatDate(value?: number | null) { return value ? new Date(value * 1000).toLocaleString([], { dateStyle: "medium", timeStyle: "short" }) : "—"; }
 function Status({ status }: { status: string }) { const good = status === "sent" || status === "completed"; const bad = status === "failed"; return <span className={`status-pill ${good ? "good" : bad ? "bad" : "warn"}`}><span className="status-dot" style={{ background: "currentColor", marginRight: 0 }} />{status.replace(/_/g, " ")}</span>; }
 function Metric({ label, value, suffix = "" }: { label: string; value: number; suffix?: string }) { return <div className="stat-card"><div className="stat-label">{label}</div><div className="stat-value">{value}{suffix}</div></div>; }
-function Shell({ title, children }: { title: string; children: ReactNode }) { return <div className="app-shell"><aside className="sidebar"><div className="brand"><div className="brand-logo">R</div><div><div className="brand-name">Ritmailer</div><div className="brand-subtitle">CAMPAIGN CONTROL</div></div></div><div className="nav-label">Workspace</div><nav className="nav"><Link href="/" className="nav-item"><span className="nav-icon">⌂</span><span>Overview</span></Link><Link href="/upload" className="nav-item"><span className="nav-icon">＋</span><span>New campaign</span></Link></nav><div className="nav-label" style={{ marginTop: 28 }}>Account</div><nav className="nav"><Link className="nav-item" href="/settings"><span className="nav-icon">◐</span><span>Settings</span></Link></nav></aside><div className="main-area"><header className="topbar"><div className="topbar-title">{title}</div></header>{children}</div></div>; }
+function Shell({ title, children }: { title: string; children: ReactNode }) { return <div className="app-shell"><aside className="sidebar"><div className="brand"><div className="brand-logo">R</div><div><div className="brand-name">Ritmailer</div><div className="brand-subtitle">CAMPAIGN CONTROL</div></div></div><div className="nav-label">Workspace</div><nav className="nav"><Link href="/" className="nav-item"><span className="nav-icon">Home</span><span>Overview</span></Link><Link href="/upload" className="nav-item"><span className="nav-icon">New</span><span>New campaign</span></Link></nav><div className="nav-label" style={{ marginTop: 28 }}>Account</div><nav className="nav"><Link className="nav-item" href="/settings"><span className="nav-icon">Settings</span><span>Settings</span></Link></nav></aside><div className="main-area"><header className="topbar"><div className="topbar-title">{title}</div></header>{children}</div></div>; }

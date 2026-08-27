@@ -1616,7 +1616,7 @@ function Sidebar() {
         >
 
           <span className="nav-icon">
-            ⌂
+            Home
           </span>
 
 
@@ -1633,7 +1633,7 @@ function Sidebar() {
         >
 
           <span className="nav-icon">
-            ↑
+            New
           </span>
 
 
@@ -1650,7 +1650,7 @@ function Sidebar() {
         >
 
           <span className="nav-icon">
-            ▣
+            Leads
           </span>
 
 

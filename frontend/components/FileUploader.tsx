@@ -49,7 +49,7 @@ export default function FileUploader({
 
       setLoading(false);
 
-      // Allow selecting the same file again.
+      
       event.target.value = "";
     }
   }
@@ -60,7 +60,7 @@ export default function FileUploader({
       <div className="drop-zone">
 
         <div className="upload-icon">
-          ↑
+          New
         </div>
 
         <div className="upload-title">

@@ -19,7 +19,7 @@ export default function SignupPage() {
     setLoading(true);
     try {
       await signup(name.trim(), email.trim(), password);
-      // Verify the session through the same-origin API proxy before moving into onboarding.
+      
       await getCurrentUser();
       sessionStorage.setItem("ritmailer_onboarding", "1");
       router.replace("/settings/accounts?onboarding=1");

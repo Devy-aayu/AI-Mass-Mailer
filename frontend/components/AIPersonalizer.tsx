@@ -88,8 +88,8 @@ export default function AIPersonalizer({
     setError("");
     setNeedsAISetup(false);
 
-    // CRITICAL:
-    // Remove old successful results before starting.
+    
+    
     setGenerated([]);
 
     sessionStorage.removeItem(
@@ -248,8 +248,8 @@ export default function AIPersonalizer({
       errorValue: unknown
     ) {
 
-      // CRITICAL:
-      // Do not leave stale results around after failure.
+      
+      
       setGenerated([]);
 
       sessionStorage.removeItem(
@@ -290,7 +290,7 @@ export default function AIPersonalizer({
       <div className="card-header">
 
         <h2 className="card-title">
-          ✨ AI Lead Intelligence
+           AI Lead Intelligence
         </h2>
 
 
@@ -507,7 +507,7 @@ Never invent problems or pretend that we have contacted the business before.`}
             <div>{error}</div>
             {needsAISetup && (
               <a href="/settings/ai" style={{ display: "inline-block", marginTop: 8, fontWeight: 700, color: "inherit" }}>
-                Configure AI →
+                Configure AI
               </a>
             )}
           </div>
@@ -756,9 +756,9 @@ Never invent problems or pretend that we have contacted the business before.`}
                       </div>
 
 
-                      {/* -----------------------------------------
-                          RAW SOURCE DATA
-                      ----------------------------------------- */}
+                      {
+
+}
 
                       <div
                         style={{
@@ -803,7 +803,7 @@ Never invent problems or pretend that we have contacted the business before.`}
                               `${key}: ${value}`
                           )
                           .join(
-                            " • "
+                            " - "
                           )}
 
                       </div>

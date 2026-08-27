@@ -16,9 +16,9 @@ import {
 import AddSMTPAccount from "../../../components/AddSMTPAccount";
 
 
-/* =========================================================
-   PAGE
-========================================================= */
+
+
+
 
 export default function AccountsPage() {
 
@@ -57,9 +57,9 @@ export default function AccountsPage() {
   ] = useState(false);
 
 
-  /* =========================================================
-     LOAD ACCOUNTS
-  ========================================================= */
+  
+
+
 
   async function load() {
 
@@ -104,9 +104,9 @@ export default function AccountsPage() {
   }
 
 
-  /* =========================================================
-     INITIAL LOAD
-  ========================================================= */
+  
+
+
 
   useEffect(
     () => {
@@ -138,9 +138,9 @@ export default function AccountsPage() {
   );
 
 
-  /* =========================================================
-     DISCONNECT
-  ========================================================= */
+  
+
+
 
   async function disconnect(
     account: EmailAccount
@@ -184,9 +184,9 @@ export default function AccountsPage() {
   }
 
 
-  /* =========================================================
-     SMTP CONNECTED
-  ========================================================= */
+  
+
+
 
   function handleSMTPConnected() {
 
@@ -200,9 +200,9 @@ export default function AccountsPage() {
   }
 
 
-  /* =========================================================
-     PROVIDER COUNTS
-  ========================================================= */
+  
+
+
 
   const gmailAccounts =
     accounts.filter(
@@ -237,9 +237,9 @@ export default function AccountsPage() {
     );
 
 
-  /* =========================================================
-     RENDER
-  ========================================================= */
+  
+
+
 
   return (
 
@@ -254,9 +254,9 @@ export default function AccountsPage() {
       }}
     >
 
-      {/* =====================================================
-          HEADER
-      ===================================================== */}
+      {
+
+}
 
       <div
         style={{
@@ -303,9 +303,9 @@ export default function AccountsPage() {
       </div>
 
 
-      {/* =====================================================
-          ERROR
-      ===================================================== */}
+      {
+
+}
 
       {error && (
 
@@ -376,7 +376,7 @@ export default function AccountsPage() {
               disabled={loading || accounts.length === 0}
               onClick={() => { sessionStorage.removeItem("ritmailer_onboarding"); sessionStorage.removeItem("ritnavOnboarding"); router.push("/settings/ai?onboarding=1"); }}
             >
-              Continue to AI Setup →
+              Continue to AI Setup Next
             </button>
             <button
               type="button"
@@ -389,9 +389,9 @@ export default function AccountsPage() {
         </div>
       )}
 
-      {/* =====================================================
-          ACCOUNT SUMMARY
-      ===================================================== */}
+      {
+
+}
 
       <div
         style={{
@@ -440,9 +440,9 @@ export default function AccountsPage() {
       </div>
 
 
-      {/* =====================================================
-          CONNECTED ACCOUNTS
-      ===================================================== */}
+      {
+
+}
 
       <div
         style={{
@@ -533,7 +533,7 @@ export default function AccountsPage() {
                   8,
               }}
             >
-              ✉
+              Mail
             </div>
 
 
@@ -604,9 +604,9 @@ export default function AccountsPage() {
       </div>
 
 
-      {/* =====================================================
-          PROVIDER CONNECT
-      ===================================================== */}
+      {
+
+}
 
       <div
         style={{
@@ -663,9 +663,9 @@ export default function AccountsPage() {
         </div>
 
 
-        {/* =================================================
-            OAUTH PROVIDERS
-        ================================================= */}
+        {
+
+}
 
         <div
           style={{
@@ -706,10 +706,10 @@ export default function AccountsPage() {
           />
 
 
-          {/* IMPORTANT:
-              Zoho is now SMTP-based because you're using
-              a Zoho app-specific password.
-          */}
+          {
+
+
+}
 
           <button
             type="button"
@@ -810,9 +810,9 @@ export default function AccountsPage() {
         </div>
 
 
-        {/* =================================================
-            SMTP FORM
-        ================================================= */}
+        {
+
+}
 
         {showSMTP && (
 
@@ -840,9 +840,9 @@ export default function AccountsPage() {
       </div>
 
 
-      {/* =====================================================
-          SECURITY NOTE
-      ===================================================== */}
+      {
+
+}
 
       <div
         style={{
@@ -885,9 +885,9 @@ export default function AccountsPage() {
 }
 
 
-/* =========================================================
-   ACCOUNT ROW
-========================================================= */
+
+
+
 
 function AccountRow({
   account,
@@ -941,7 +941,7 @@ function AccountRow({
         }}
       >
 
-        {/* ICON */}
+        {}
 
         <div
           style={{
@@ -973,7 +973,7 @@ function AccountRow({
         </div>
 
 
-        {/* INFO */}
+        {}
 
         <div
           style={{
@@ -1079,7 +1079,7 @@ function AccountRow({
       </div>
 
 
-      {/* DISCONNECT */}
+      {}
 
       <button
         type="button"
@@ -1105,9 +1105,9 @@ function AccountRow({
 }
 
 
-/* =========================================================
-   PROVIDER BUTTON
-========================================================= */
+
+
+
 
 function ProviderButton({
   icon,
@@ -1227,9 +1227,9 @@ function ProviderButton({
 }
 
 
-/* =========================================================
-   PROVIDER DETAILS
-========================================================= */
+
+
+
 
 function providerDetails(
   provider: string
@@ -1275,7 +1275,7 @@ function providerDetails(
         label:
           "SMTP Mailbox",
         icon:
-          "✉",
+          "Mail",
       };
 
 
@@ -1285,16 +1285,16 @@ function providerDetails(
         label:
           provider,
         icon:
-          "✉",
+          "Mail",
       };
 
   }
 }
 
 
-/* =========================================================
-   SUMMARY CARD
-========================================================= */
+
+
+
 
 function SummaryCard({
   label,

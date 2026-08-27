@@ -138,11 +138,11 @@ function Sidebar({ active }: { active: string }) {
     <div className="brand"><div className="brand-logo">R</div><div><div className="brand-name">Ritmailer</div><div className="brand-subtitle">CAMPAIGN CONTROL</div></div></div>
     <div className="nav-label">Workspace</div>
     <nav className="nav">
-      <Link href="/" className={`nav-item ${active === "dashboard" ? "active" : ""}`}><span className="nav-icon">⌂</span><span>Overview</span></Link>
-      <Link href="/upload" className="nav-item"><span className="nav-icon">＋</span><span>New campaign</span></Link>
+      <Link href="/" className={`nav-item ${active === "dashboard" ? "active" : ""}`}><span className="nav-icon">Home</span><span>Overview</span></Link>
+      <Link href="/upload" className="nav-item"><span className="nav-icon">New</span><span>New campaign</span></Link>
     </nav>
     <div className="nav-label" style={{ marginTop: 28 }}>Account</div>
-    <nav className="nav"><Link className="nav-item" href="/settings"><span className="nav-icon">◐</span><span>Settings</span></Link></nav>
+    <nav className="nav"><Link className="nav-item" href="/settings"><span className="nav-icon">Settings</span><span>Settings</span></Link></nav>
   </aside>;
 }
 function Topbar({ title }: { title: string }) { return <header className="topbar"><div className="topbar-title">{title}</div></header>; }

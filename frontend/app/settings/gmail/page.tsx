@@ -296,7 +296,7 @@ function Sidebar() {
           className="nav-item"
         >
           <span className="nav-icon">
-            ⌂
+            Home
           </span>
 
           Dashboard
@@ -308,7 +308,7 @@ function Sidebar() {
           className="nav-item"
         >
           <span className="nav-icon">
-            ↑
+            New
           </span>
 
           New Campaign

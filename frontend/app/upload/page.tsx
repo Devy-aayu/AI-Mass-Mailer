@@ -82,17 +82,17 @@ export default function UploadPage() {
     sessionStorage.setItem("ritnavCampaignId", campaignId);
 
 
-    // Store ALL usable leads.
-    //
-    // This includes phone-only leads.
-    // The email campaign will filter these later.
+    
+    
+    
+    
     sessionStorage.setItem(
       "ritnavLeads",
       JSON.stringify(data.leads)
     );
 
 
-    // Store useful campaign statistics.
+    
     sessionStorage.setItem(
       "ritnavLeadInfo",
       JSON.stringify({
@@ -148,9 +148,9 @@ export default function UploadPage() {
             </div>
           )}
 
-          {/* -------------------------------------------------- */}
-          {/* UPLOAD                                              */}
-          {/* -------------------------------------------------- */}
+          {}
+          {}
+          {}
 
           {!accountsLoading && accounts.length > 0 && !result && (
 
@@ -188,9 +188,9 @@ export default function UploadPage() {
           )}
 
 
-          {/* -------------------------------------------------- */}
-          {/* RESULT                                              */}
-          {/* -------------------------------------------------- */}
+          {}
+          {}
+          {}
 
           {result && (
 
@@ -241,7 +241,7 @@ export default function UploadPage() {
                         : ""
                     }
                   >
-                    Continue to Email Campaign →
+                    Continue to Email Campaign
                   </button>
 
                 </div>
@@ -249,9 +249,9 @@ export default function UploadPage() {
               </div>
 
 
-              {/* ------------------------------------------------ */}
-              {/* CONTACT STATS                                    */}
-              {/* ------------------------------------------------ */}
+              {}
+              {}
+              {}
 
               <div className="stats-grid">
 
@@ -362,9 +362,9 @@ export default function UploadPage() {
               </div>
 
 
-              {/* ------------------------------------------------ */}
-              {/* DETECTED COLUMNS                                 */}
-              {/* ------------------------------------------------ */}
+              {}
+              {}
+              {}
 
               <div
                 className="card"
@@ -438,9 +438,9 @@ export default function UploadPage() {
               </div>
 
 
-              {/* ------------------------------------------------ */}
-              {/* PHONE-ONLY NOTICE                                */}
-              {/* ------------------------------------------------ */}
+              {}
+              {}
+              {}
 
               {result.phone_leads > 0 && (
 
@@ -460,7 +460,7 @@ export default function UploadPage() {
                       marginBottom: 6,
                     }}
                   >
-                    📞 Phone leads were preserved
+                    Phone Phone leads were preserved
                   </div>
 
                   <div
@@ -483,9 +483,9 @@ export default function UploadPage() {
               )}
 
 
-              {/* ------------------------------------------------ */}
-              {/* LEAD TABLE                                       */}
-              {/* ------------------------------------------------ */}
+              {}
+              {}
+              {}
 
               <div className="card">
 
@@ -706,9 +706,9 @@ export default function UploadPage() {
               </div>
 
 
-              {/* ------------------------------------------------ */}
-              {/* BOTTOM ACTION                                    */}
-              {/* ------------------------------------------------ */}
+              {}
+              {}
+              {}
 
               <div
                 style={{
@@ -725,7 +725,7 @@ export default function UploadPage() {
                     result.email_leads === 0
                   }
                 >
-                  Review Email Leads →
+                  Review Email Leads Next
                 </button>
 
               </div>
@@ -743,9 +743,9 @@ export default function UploadPage() {
 }
 
 
-/* -------------------------------------------------------------------------- */
-/* DETECTION CARD                                                             */
-/* -------------------------------------------------------------------------- */
+
+
+
 
 function DetectionCard({
   label,
@@ -852,9 +852,9 @@ function DetectionCard({
 }
 
 
-/* -------------------------------------------------------------------------- */
-/* TABLE STYLES                                                               */
-/* -------------------------------------------------------------------------- */
+
+
+
 
 const tableHeader: React.CSSProperties = {
   padding: "13px 18px",
@@ -873,9 +873,9 @@ const tableCell: React.CSSProperties = {
 };
 
 
-/* -------------------------------------------------------------------------- */
-/* SIDEBAR                                                                    */
-/* -------------------------------------------------------------------------- */
+
+
+
 
 function Sidebar() {
 
@@ -916,7 +916,7 @@ function Sidebar() {
           className="nav-item"
         >
           <span className="nav-icon">
-            ⌂
+            Home
           </span>
 
           <span>
@@ -930,7 +930,7 @@ function Sidebar() {
           className="nav-item active"
         >
           <span className="nav-icon">
-            ↑
+            New
           </span>
 
           <span>
@@ -944,7 +944,7 @@ function Sidebar() {
           className="nav-item"
         >
           <span className="nav-icon">
-            ▣
+            Leads
           </span>
 
           <span>
@@ -959,9 +959,9 @@ function Sidebar() {
 }
 
 
-/* -------------------------------------------------------------------------- */
-/* TOPBAR                                                                     */
-/* -------------------------------------------------------------------------- */
+
+
+
 
 function Topbar({
   title,

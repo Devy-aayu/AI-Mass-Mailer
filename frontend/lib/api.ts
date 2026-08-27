@@ -1,9 +1,9 @@
 const API_URL = "";
 
 
-/* =========================================================
-   LEADS
-========================================================= */
+
+
+
 
 export type Lead = {
   name: string;
@@ -28,9 +28,9 @@ export type Lead = {
 };
 
 
-/* =========================================================
-   AI
-========================================================= */
+
+
+
 
 export type LeadAnalysis = {
   person_name:
@@ -81,9 +81,9 @@ export type AIGeneratedEmail = {
 };
 
 
-/* =========================================================
-   EMAIL ACCOUNTS
-========================================================= */
+
+
+
 
 export type EmailProvider =
   | "gmail"
@@ -106,9 +106,9 @@ export type EmailAccount = {
 };
 
 
-/* =========================================================
-   SMTP
-========================================================= */
+
+
+
 
 export type SMTPAccountInput = {
   email: string;
@@ -129,9 +129,9 @@ export type SMTPAccountInput = {
 };
 
 
-/* =========================================================
-   UPLOAD
-========================================================= */
+
+
+
 
 export async function uploadLeads(
   file: File,
@@ -181,9 +181,9 @@ export async function uploadLeads(
 }
 
 
-/* =========================================================
-   AI GENERATION
-========================================================= */
+
+
+
 
 export async function generatePersonalizedEmails(
   leads: Lead[],
@@ -264,9 +264,9 @@ export async function generatePersonalizedEmails(
 }
 
 
-/* =========================================================
-   EMAIL ACCOUNTS
-========================================================= */
+
+
+
 
 export async function getEmailAccounts() {
 
@@ -308,9 +308,9 @@ export async function getEmailAccounts() {
 }
 
 
-/* =========================================================
-   DISCONNECT
-========================================================= */
+
+
+
 
 export async function disconnectEmailAccount(
   accountId: string
@@ -348,9 +348,9 @@ export async function disconnectEmailAccount(
 }
 
 
-/* =========================================================
-   CONNECT URL
-========================================================= */
+
+
+
 
 export function getConnectUrl(
   provider:
@@ -364,9 +364,9 @@ export function getConnectUrl(
     "gmail"
   ) {
 
-    /*
-     * Existing Gmail OAuth endpoint.
-     */
+    
+
+
 
     return (
       `${API_URL}/api/gmail/connect`
@@ -382,9 +382,9 @@ export function getConnectUrl(
 }
 
 
-/* =========================================================
-   TEST SMTP
-========================================================= */
+
+
+
 
 export async function testSMTPAccount(
   data: SMTPAccountInput
@@ -450,9 +450,9 @@ export async function testSMTPAccount(
 }
 
 
-/* =========================================================
-   CREATE SMTP ACCOUNT
-========================================================= */
+
+
+
 
 export async function createSMTPAccount(
   data: SMTPAccountInput
@@ -522,9 +522,9 @@ export async function createSMTPAccount(
 }
 
 
-/* =========================================================
-   STANDARD SEND
-========================================================= */
+
+
+
 
 export async function sendStandardEmail(
   accountId: string,
@@ -583,9 +583,9 @@ export async function sendStandardEmail(
 }
 
 
-/* =========================================================
-   AI SEND
-========================================================= */
+
+
+
 
 export async function sendAIPersonalizedEmails(
   accountId: string,
@@ -641,9 +641,9 @@ export async function sendAIPersonalizedEmails(
 
   return data;
 }
-/* =========================================================
-   CAMPAIGNS
-========================================================= */
+
+
+
 
 export type CampaignLead = Lead & {
   id: string;
@@ -696,9 +696,9 @@ export async function getCampaign(id: string) {
   return apiJson<{ success: boolean; campaign: Campaign & { leads: CampaignLead[] } }>(`${API_URL}/api/campaigns/${encodeURIComponent(id)}`);
 }
 
-/* =========================================================
-   AUTHENTICATION
-========================================================= */
+
+
+
 
 export type AuthUser = {
   id: string;
@@ -759,9 +759,9 @@ export async function getCurrentUser() {
   return apiJson<{ success: boolean; user: AuthUser }>(`${API_URL}/api/auth/me`);
 }
 
-/* =========================================================
-   AI CONFIGURATION
-========================================================= */
+
+
+
 
 export type AIConfig = {
   id: string;

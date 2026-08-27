@@ -350,5 +350,5 @@ function providerIcon(provider: EmailProvider) {
     return "Z";
   }
 
-  return "✉";
+  return "Mail";
 }

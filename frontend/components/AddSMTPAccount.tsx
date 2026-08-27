@@ -273,7 +273,7 @@ export default function AddSMTPAccount({
       </div>
 
 
-      {/* QUICK ZOHO */}
+      {}
 
       <button
         type="button"
@@ -290,7 +290,7 @@ export default function AddSMTPAccount({
       </button>
 
 
-      {/* EMAIL */}
+      {}
 
       <div className="field">
 
@@ -317,7 +317,7 @@ export default function AddSMTPAccount({
       </div>
 
 
-      {/* DISPLAY NAME */}
+      {}
 
       <div className="field">
 
@@ -343,7 +343,7 @@ export default function AddSMTPAccount({
       </div>
 
 
-      {/* SMTP HOST */}
+      {}
 
       <div className="field">
 
@@ -369,7 +369,7 @@ export default function AddSMTPAccount({
       </div>
 
 
-      {/* PORT + SECURITY */}
+      {}
 
       <div
         style={{
@@ -445,7 +445,7 @@ export default function AddSMTPAccount({
       </div>
 
 
-      {/* USERNAME */}
+      {}
 
       <div className="field">
 
@@ -472,7 +472,7 @@ export default function AddSMTPAccount({
       </div>
 
 
-      {/* PASSWORD */}
+      {}
 
       <div className="field">
 
@@ -515,7 +515,7 @@ export default function AddSMTPAccount({
       </div>
 
 
-      {/* STATUS */}
+      {}
 
       {message && (
 
@@ -567,7 +567,7 @@ export default function AddSMTPAccount({
       )}
 
 
-      {/* BUTTONS */}
+      {}
 
       <div
         style={{
