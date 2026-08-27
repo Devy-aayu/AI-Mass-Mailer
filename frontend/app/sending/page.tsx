@@ -11,16 +11,11 @@ import {
 } from "next/navigation";
 
 
-/* =========================================================
-   CONFIG
-========================================================= */
+
 
 const API_URL = "";
 
 
-/* =========================================================
-   TYPES
-========================================================= */
 
 type Lead = {
   name: string;
@@ -59,19 +54,13 @@ type SendResult = {
 };
 
 
-/* =========================================================
-   PAGE
-========================================================= */
 
 export default function SendingPage() {
 
   const router = useRouter();
 
 
-  /* ---------------------------------------------------------
-     STATUS
-  --------------------------------------------------------- */
-
+  
   const [
     status,
     setStatus,
@@ -103,18 +92,12 @@ export default function SendingPage() {
   ] = useState(0);
 
 
-  /* ---------------------------------------------------------
-     IMPORTANT:
-     Prevent duplicate campaign execution in React Strict Mode.
-  --------------------------------------------------------- */
+  
 
   const hasStarted =
     useRef(false);
 
 
-  /* =========================================================
-     START AUTOMATICALLY
-  ========================================================= */
 
   useEffect(() => {
 
@@ -129,17 +112,11 @@ export default function SendingPage() {
   }, []);
 
 
-  /* =========================================================
-     START CAMPAIGN
-  ========================================================= */
+ 
 
   async function startCampaign() {
 
     try {
-
-      // =======================================================
-      // LOAD SESSION DATA
-      // =======================================================
 
       const recipientsRaw =
         sessionStorage.getItem(
@@ -187,9 +164,7 @@ export default function SendingPage() {
       }
 
 
-      // =======================================================
-      // AI PERSONALIZED MODE
-      // =======================================================
+      
 
       if (aiMode) {
 
@@ -203,9 +178,6 @@ export default function SendingPage() {
       }
 
 
-      // =======================================================
-      // STANDARD MODE
-      // =======================================================
 
       await sendStandardCampaign(
         recipientsRaw,
@@ -243,9 +215,6 @@ export default function SendingPage() {
   }
 
 
-  /* =========================================================
-     AI CAMPAIGN
-  ========================================================= */
 
   async function sendAIPersonalizedCampaign(
     personalizedRaw: string | null,
@@ -253,9 +222,6 @@ export default function SendingPage() {
     campaignId: string
   ) {
 
-    // ---------------------------------------------------------
-    // CHECK AI DATA
-    // ---------------------------------------------------------
 
     if (!personalizedRaw) {
 
@@ -294,9 +260,6 @@ export default function SendingPage() {
     }
 
 
-    // ---------------------------------------------------------
-    // NORMALIZE + VALIDATE
-    // ---------------------------------------------------------
 
     const personalizedEmails:
       PersonalizedEmail[] =
@@ -397,9 +360,6 @@ export default function SendingPage() {
         );
 
 
-    // ---------------------------------------------------------
-    // CHECK RECIPIENTS
-    // ---------------------------------------------------------
 
     if (
       !personalizedEmails.length
@@ -412,9 +372,6 @@ export default function SendingPage() {
     }
 
 
-    // ---------------------------------------------------------
-    // EMAIL VALIDATION
-    // ---------------------------------------------------------
 
     const invalidEmail =
       personalizedEmails.find(
@@ -436,9 +393,6 @@ export default function SendingPage() {
     }
 
 
-    // ---------------------------------------------------------
-    // START
-    // ---------------------------------------------------------
 
     setStatus(
       "sending"
@@ -449,9 +403,6 @@ export default function SendingPage() {
     );
 
 
-    // ---------------------------------------------------------
-    // SEND
-    // ---------------------------------------------------------
 
     const response =
       await fetch(
@@ -497,9 +448,6 @@ export default function SendingPage() {
     );
 
 
-    // ---------------------------------------------------------
-    // READ RESPONSE
-    // ---------------------------------------------------------
 
     const data =
       await readJsonResponse(
@@ -507,9 +455,6 @@ export default function SendingPage() {
       );
 
 
-    // ---------------------------------------------------------
-    // API ERROR
-    // ---------------------------------------------------------
 
     if (!response.ok) {
 
@@ -522,9 +467,6 @@ export default function SendingPage() {
     }
 
 
-    // ---------------------------------------------------------
-    // SUCCESS
-    // ---------------------------------------------------------
 
     setProgress(
       100
@@ -543,9 +485,6 @@ export default function SendingPage() {
   }
 
 
-  /* =========================================================
-     STANDARD CAMPAIGN
-  ========================================================= */
 
   async function sendStandardCampaign(
     recipientsRaw: string | null,
@@ -555,9 +494,6 @@ export default function SendingPage() {
     campaignId: string
   ) {
 
-    // ---------------------------------------------------------
-    // RECIPIENT STORAGE CHECK
-    // ---------------------------------------------------------
 
     if (!recipientsRaw) {
 
@@ -601,9 +537,6 @@ export default function SendingPage() {
     }
 
 
-    // ---------------------------------------------------------
-    // NORMALIZE RECIPIENTS
-    // ---------------------------------------------------------
 
     const recipients:
       Lead[] =
@@ -613,7 +546,6 @@ export default function SendingPage() {
             recipient: unknown
           ): Lead | null => {
 
-            // New object format
 
             if (
               typeof recipient ===
@@ -671,8 +603,7 @@ export default function SendingPage() {
             }
 
 
-            // Old format:
-            // "person@example.com"
+          
 
             if (
               typeof recipient ===
@@ -708,10 +639,7 @@ export default function SendingPage() {
         );
 
 
-    // ---------------------------------------------------------
-    // VALID EMAILS
-    // ---------------------------------------------------------
-
+    
     const validRecipients =
       recipients.filter(
         (
@@ -734,9 +662,6 @@ export default function SendingPage() {
     }
 
 
-    // ---------------------------------------------------------
-    // SUBJECT
-    // ---------------------------------------------------------
 
     if (
       !subject.trim()
@@ -749,9 +674,6 @@ export default function SendingPage() {
     }
 
 
-    // ---------------------------------------------------------
-    // MESSAGE
-    // ---------------------------------------------------------
 
     if (
       !message.trim()
@@ -764,9 +686,6 @@ export default function SendingPage() {
     }
 
 
-    // ---------------------------------------------------------
-    // START
-    // ---------------------------------------------------------
 
     setStatus(
       "sending"
@@ -778,9 +697,6 @@ export default function SendingPage() {
     );
 
 
-    // ---------------------------------------------------------
-    // SEND
-    // ---------------------------------------------------------
 
     const response =
       await fetch(
@@ -829,9 +745,6 @@ export default function SendingPage() {
     );
 
 
-    // ---------------------------------------------------------
-    // RESPONSE
-    // ---------------------------------------------------------
 
     const data =
       await readJsonResponse(
@@ -839,9 +752,7 @@ export default function SendingPage() {
       );
 
 
-    // ---------------------------------------------------------
-    // ERROR
-    // ---------------------------------------------------------
+    
 
     if (!response.ok) {
 
@@ -854,9 +765,7 @@ export default function SendingPage() {
     }
 
 
-    // ---------------------------------------------------------
-    // COMPLETE
-    // ---------------------------------------------------------
+   
 
     setProgress(
       100
@@ -875,9 +784,6 @@ export default function SendingPage() {
   }
 
 
-  /* =========================================================
-     RENDER: LOADING
-  ========================================================= */
 
   if (
     status ===
@@ -960,9 +866,6 @@ export default function SendingPage() {
   }
 
 
-  /* =========================================================
-     RENDER: SENDING
-  ========================================================= */
 
   if (
     status ===
@@ -1057,10 +960,6 @@ export default function SendingPage() {
 
   }
 
-
-  /* =========================================================
-     RENDER: ERROR
-  ========================================================= */
 
   if (
     status ===
@@ -1192,10 +1091,6 @@ export default function SendingPage() {
   }
 
 
-  /* =========================================================
-     COMPLETED
-  ========================================================= */
-
   return (
 
     <div className="app-shell">
@@ -1219,14 +1114,12 @@ export default function SendingPage() {
               <div className="complete-box">
 
 
-                {/* SUCCESS ICON */}
 
                 <div className="complete-icon">
-                  ✓
+                  
                 </div>
 
 
-                {/* TITLE */}
 
                 <h1 className="page-title">
                   Campaign Completed
@@ -1238,9 +1131,7 @@ export default function SendingPage() {
                 </p>
 
 
-                {/* =================================================
-                    SUMMARY
-                ================================================= */}
+               
 
                 <div className="result-stats">
 
@@ -1291,9 +1182,7 @@ export default function SendingPage() {
                 </div>
 
 
-                {/* =================================================
-                    MODE
-                ================================================= */}
+               
 
                 {result?.mode ===
                   "ai_personalized" && (
@@ -1316,15 +1205,12 @@ export default function SendingPage() {
                         650,
                     }}
                   >
-                    ✨ AI-personalized campaign
+                     AI-personalized campaign
                   </div>
 
                 )}
 
 
-                {/* =================================================
-                    RESULTS
-                ================================================= */}
 
                 {result?.results &&
                   result.results.length >
@@ -1396,7 +1282,6 @@ export default function SendingPage() {
                               }}
                             >
 
-                              {/* NAME */}
 
                               <div>
 
@@ -1415,7 +1300,6 @@ export default function SendingPage() {
                               </div>
 
 
-                              {/* EMAIL */}
 
                               <div
                                 style={{
@@ -1454,7 +1338,6 @@ export default function SendingPage() {
                               </div>
 
 
-                              {/* STATUS */}
 
                               <div
                                 style={{
@@ -1498,9 +1381,7 @@ export default function SendingPage() {
                   )}
 
 
-                {/* =================================================
-                    DASHBOARD
-                ================================================= */}
+                
 
                 <button
                   className="btn btn-primary"
@@ -1533,9 +1414,7 @@ export default function SendingPage() {
 }
 
 
-/* =========================================================
-   EMAIL VALIDATION
-========================================================= */
+
 
 function isValidEmail(
   email: string
@@ -1596,9 +1475,7 @@ function isValidEmail(
 }
 
 
-/* =========================================================
-   READ JSON
-========================================================= */
+
 
 async function readJsonResponse(
   response: Response
@@ -1624,9 +1501,7 @@ async function readJsonResponse(
 }
 
 
-/* =========================================================
-   API ERROR
-========================================================= */
+
 
 function extractApiError(
   data: Record<string, unknown>
@@ -1698,9 +1573,6 @@ function extractApiError(
 }
 
 
-/* =========================================================
-   SIDEBAR
-========================================================= */
 
 function Sidebar() {
 
@@ -1796,9 +1668,7 @@ function Sidebar() {
 }
 
 
-/* =========================================================
-   TOPBAR
-========================================================= */
+
 
 function Topbar({
   title,
