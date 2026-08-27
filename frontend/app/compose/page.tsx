@@ -541,9 +541,7 @@ export default function ComposePage() {
 
         <main className="page">
 
-          {/* =================================================
-              HEADER
-          ================================================= */}
+          
 
           <div className="page-header">
 
@@ -584,24 +582,18 @@ export default function ComposePage() {
           </div>
 
 
-          {/* =================================================
-              COMPOSER GRID
-          ================================================= */}
+          
 
           <div
             className="composer-layout"
           >
 
-            {/* =================================================
-                LEFT
-            ================================================= */}
+           
 
             <div>
 
 
-              {/* =================================================
-                  STANDARD COMPOSER
-              ================================================= */}
+             
 
               <div className="card">
 
@@ -623,7 +615,7 @@ export default function ComposePage() {
                 <div className="card-body">
 
 
-                  {/* SUBJECT */}
+                
 
                   <div className="field">
 
@@ -648,7 +640,7 @@ export default function ComposePage() {
                   </div>
 
 
-                  {/* MESSAGE */}
+                
 
                   <div className="field">
 
@@ -741,7 +733,6 @@ Ritmailer`}
                   </div>
 
 
-                  {/* STANDARD ACTIONS */}
 
                   <div
                     style={{
@@ -815,9 +806,6 @@ Ritmailer`}
               </div>
 
 
-              {/* =================================================
-                  AI PERSONALIZATION
-              ================================================= */}
               <AccountSelector />
               
               <AIPersonalizer
@@ -836,9 +824,7 @@ Ritmailer`}
               />
 
 
-              {/* =================================================
-                  AI READY HEADER
-              ================================================= */}
+             
 
               {aiEmails.length > 0 && (
 
@@ -877,7 +863,7 @@ Ritmailer`}
                               750,
                           }}
                         >
-                          ✨{" "}
+                          {" "}
                           {aiEmails.length}{" "}
                           AI-personalized emails ready
                         </div>
@@ -918,9 +904,7 @@ Ritmailer`}
               )}
 
 
-              {/* =================================================
-                  GENERATED EMAILS
-              ================================================= */}
+              
 
               {aiEmails.length > 0 && (
 
@@ -1021,7 +1005,7 @@ Ritmailer`}
                                 }}
                               >
 
-                                {/* EMAIL HEADER */}
+                               
 
                                 <div
                                   style={{
@@ -1143,7 +1127,7 @@ Ritmailer`}
                                 </div>
 
 
-                                {/* EMAIL BODY */}
+                            
 
                                 <div
                                   style={{
@@ -1156,7 +1140,7 @@ Ritmailer`}
 
                                     <>
 
-                                      {/* EDIT SUBJECT */}
+                                 
 
                                       <div
                                         className="field"
@@ -1190,7 +1174,7 @@ Ritmailer`}
                                       </div>
 
 
-                                      {/* EDIT BODY */}
+                                      
 
                                       <div
                                         className="field"
@@ -1257,7 +1241,7 @@ Ritmailer`}
 
                                     <>
 
-                                      {/* SUBJECT */}
+                                     
 
                                       <div
                                         style={{
@@ -1295,7 +1279,7 @@ Ritmailer`}
                                       </div>
 
 
-                                      {/* BODY */}
+                                     
 
                                       <div
                                         style={{
@@ -1350,9 +1334,7 @@ Ritmailer`}
                       </div>
 
 
-                      {/* =================================================
-                          SEND BUTTON
-                      ================================================= */}
+                     
 
                       <div
                         style={{
@@ -1414,9 +1396,7 @@ Ritmailer`}
             </div>
 
 
-            {/* =================================================
-                RECIPIENTS
-            ================================================= */}
+            
 
             <div
               className="card recipient-card"
@@ -1473,7 +1453,7 @@ Ritmailer`}
               </div>
 
 
-              {/* RECIPIENTS */}
+              
 
               <div
                 style={{
@@ -1506,7 +1486,7 @@ Ritmailer`}
                       }}
                     >
 
-                      {/* AVATAR */}
+                      
 
                       <div
                         style={{
@@ -1545,7 +1525,7 @@ Ritmailer`}
                       </div>
 
 
-                      {/* TEXT */}
+                     
 
                       <div
                         style={{
@@ -1602,7 +1582,7 @@ Ritmailer`}
                       </div>
 
 
-                      {/* AI INDICATOR */}
+                     
 
                       {aiEmails.some(
                         (
@@ -1623,7 +1603,7 @@ Ritmailer`}
                               0,
                           }}
                         >
-                          ✨
+                          
                         </span>
 
                       )}
@@ -1636,7 +1616,6 @@ Ritmailer`}
               </div>
 
 
-              {/* FOOTER */}
 
               <div
                 style={{
@@ -1656,7 +1635,7 @@ Ritmailer`}
                 {aiEmails.length > 0 ? (
 
                   <>
-                    ✓{" "}
+                    {" "}
                     {
                       aiEmails.length
                     }{" "}
@@ -1690,9 +1669,6 @@ Ritmailer`}
 }
 
 
-/* =========================================================
-   SIDEBAR
-========================================================= */
 
 function Sidebar() {
 
@@ -1762,9 +1738,6 @@ function Sidebar() {
 }
 
 
-/* =========================================================
-   TOPBAR
-========================================================= */
 
 function Topbar({
   title,
