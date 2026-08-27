@@ -6,10 +6,10 @@ from pathlib import Path
 from dotenv import load_dotenv
 
 
-# backend/
+          
 BASE_DIR = Path(__file__).resolve().parent.parent
 
-# Always load backend/.env regardless of the shell working directory.
+                                                                     
 load_dotenv(BASE_DIR / ".env")
 
 
@@ -21,9 +21,9 @@ FRONTEND_URL = (
 )
 
 
-# ---------------------------------------------------------------------------
-# Google
-# ---------------------------------------------------------------------------
+                                                                             
+        
+                                                                             
 
 GOOGLE_CLIENT_ID = os.getenv(
     "GOOGLE_CLIENT_ID",
@@ -41,9 +41,9 @@ GOOGLE_REDIRECT_URI = os.getenv(
 )
 
 
-# ---------------------------------------------------------------------------
-# AI
-# ---------------------------------------------------------------------------
+                                                                             
+    
+                                                                             
 
 OPENROUTER_API_KEY = os.getenv(
     "OPENROUTER_API_KEY",
@@ -66,20 +66,20 @@ OPENROUTER_SITE_NAME = os.getenv(
 )
 
 
-# ---------------------------------------------------------------------------
-# Database
-# ---------------------------------------------------------------------------
+                                                                             
+          
+                                                                             
 
 DATABASE_URL = os.getenv("DATABASE_URL", "").strip()
 
-# Prefer Neon/PostgreSQL when configured. Otherwise keep SQLite for local
-# development and serverless fallback paths.
+                                                                         
+                                            
 if DATABASE_URL:
     ACCOUNT_DB_PATH = DATABASE_URL
 else:
-    # SQLite is writable only in a local filesystem. In serverless environments like
-    # Vercel, /var/task is read-only, so we must fall back to a writable temp path.
-    # A relative ACCOUNT_DB_PATH should be resolved from the backend directory.
+                                                                                    
+                                                                                   
+                                                                               
     def _resolve_account_db_path() -> str:
         configured = os.getenv("ACCOUNT_DB_PATH")
         candidate = Path(configured).expanduser() if configured else BASE_DIR / "data" / "accounts.db"
@@ -101,9 +101,9 @@ else:
     ACCOUNT_DB_PATH = _resolve_account_db_path()
 
 
-# ---------------------------------------------------------------------------
-# Security
-# ---------------------------------------------------------------------------
+                                                                             
+          
+                                                                             
 
 TOKEN_ENCRYPTION_KEY = os.getenv(
     "TOKEN_ENCRYPTION_KEY",
@@ -131,9 +131,9 @@ AUTH_COOKIE_SECURE = (
 )
 
 
-# ---------------------------------------------------------------------------
-# Microsoft
-# ---------------------------------------------------------------------------
+                                                                             
+           
+                                                                             
 
 MICROSOFT_CLIENT_ID = os.getenv(
     "MICROSOFT_CLIENT_ID",
@@ -165,9 +165,9 @@ MICROSOFT_SCOPES = [
 ]
 
 
-# ---------------------------------------------------------------------------
-# Zoho
-# ---------------------------------------------------------------------------
+                                                                             
+      
+                                                                             
 
 ZOHO_CLIENT_ID = os.getenv(
     "ZOHO_CLIENT_ID",

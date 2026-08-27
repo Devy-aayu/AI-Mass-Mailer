@@ -36,10 +36,10 @@ app = FastAPI(title="Ritnav Mailer API", version="2.0.0")
 
 @app.on_event("startup")
 def initialize_application_data() -> None:
-    # Neon/PostgreSQL may start completely empty. Create the base users table
-    # before tables that reference users via foreign keys. Keeping initialization
-    # in the startup hook also prevents database queries from running while the
-    # Python module is still being imported by Vercel.
+                                                                             
+                                                                                 
+                                                                               
+                                                      
     initialize_user_tables()
     initialize_database()
     initialize_ai_tables()

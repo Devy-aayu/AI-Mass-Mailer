@@ -5,7 +5,7 @@ import time
 
 try:
     import msal
-except ImportError:  # Optional until Outlook is connected.
+except ImportError:                                        
     msal = None
 import requests
 
@@ -267,7 +267,7 @@ class OutlookProvider:
                 "Microsoft did not provide an access token."
             )
 
-        # Keep the MSAL cache updated.
+                                      
         new_cache = cache.serialize()
 
         updated_tokens = {

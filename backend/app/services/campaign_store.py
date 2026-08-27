@@ -53,7 +53,7 @@ def initialize_campaign_tables() -> None:
                 FOREIGN KEY(campaign_id) REFERENCES campaigns(id) ON DELETE CASCADE
             )
         """)
-        # Lightweight migration for databases created before sent-message fields existed.
+                                                                                         
         existing_columns = table_columns(connection, "campaign_leads")
         for name, sql_type in (
             ("sent_subject", "TEXT DEFAULT ''"),

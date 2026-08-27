@@ -61,8 +61,8 @@ class PersonalizedEmail(BaseModel):
 
 class SendRequest(BaseModel):
 
-    # NEW:
-    # Which connected account should send the campaign?
+          
+                                                       
     account_id: Optional[str] = None
     campaign_id: Optional[str] = None
 
@@ -124,9 +124,9 @@ async def send_campaign(
     user: dict = Depends(get_current_user),
 ):
 
-    # =========================================================
-    # ACCOUNT
-    # =========================================================
+                                                               
+             
+                                                               
 
     account_id = (request.account_id or "").strip()
     if not account_id:
@@ -162,9 +162,9 @@ async def send_campaign(
     if request.campaign_id:
         update_campaign(request.campaign_id, user_id=user["id"], account_id=account_id, status="sending", started_at=__import__("time").time())
 
-    # =========================================================
-    # AI PERSONALIZED MODE
-    # =========================================================
+                                                               
+                          
+                                                               
 
     if request.personalized_emails:
 
@@ -367,9 +367,9 @@ async def send_campaign(
         }
 
 
-    # =========================================================
-    # STANDARD MODE
-    # =========================================================
+                                                               
+                   
+                                                               
 
     subject = (
         request.subject

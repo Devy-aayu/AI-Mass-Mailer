@@ -170,7 +170,7 @@ async def upload_leads(
                 0,
             ),
 
-        # Compatibility fields.
+                               
         "valid_emails":
             len(email_leads),
 

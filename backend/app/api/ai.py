@@ -37,7 +37,7 @@ def generate_ai_campaign(request: GenerateRequest, user: dict = Depends(get_curr
         raise HTTPException(status_code=400, detail="Maximum 5 leads per AI request.")
     ai_config = get_ai_config(user["id"])
     if not ai_config:
-        raise HTTPException(status_code=428, detail="AI is not configured. Add your AI provider, API key, and model in Settings → AI.")
+        raise HTTPException(status_code=428, detail="AI is not configured. Add your AI provider, API key, and model in Settings > AI.")
     email_leads = [lead for lead in request.leads if lead.email.strip()]
     if not email_leads:
         raise HTTPException(status_code=400, detail="No email-capable leads were provided.")

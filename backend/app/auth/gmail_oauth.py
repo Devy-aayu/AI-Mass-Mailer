@@ -33,8 +33,8 @@ def create_flow(state: str | None = None, code_verifier: str | None = None):
 
 
 def create_authorization_url(user_id: str) -> str:
-    # Generate the PKCE verifier ourselves so it can be stored server-side
-    # together with our login/OAuth state before redirecting the browser.
+                                                                          
+                                                                         
     import secrets
     code_verifier = secrets.token_urlsafe(96)
     state = create_oauth_state("gmail", user_id, code_verifier=code_verifier)

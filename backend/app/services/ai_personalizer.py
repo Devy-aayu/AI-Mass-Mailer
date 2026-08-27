@@ -17,9 +17,9 @@ OPENROUTER_URL = (
 )
 
 
-# =========================================================
-# BASIC HELPERS
-# =========================================================
+                                                           
+               
+                                                           
 
 def clean_text(
     value: Any,
@@ -39,7 +39,7 @@ def clean_model_output(
         text or ""
     ).strip()
 
-    # Remove Gemma/provider padding tokens.
+                                           
     text = re.sub(
         r"<pad>",
         "",
@@ -47,7 +47,7 @@ def clean_model_output(
         flags=re.IGNORECASE,
     ).strip()
 
-    # Remove markdown JSON fences.
+                                  
     if text.startswith(
         "```"
     ):
@@ -68,9 +68,9 @@ def clean_model_output(
     return text.strip()
 
 
-# =========================================================
-# OPENROUTER REQUEST
-# =========================================================
+                                                           
+                    
+                                                           
 
 def _ai_request(
     messages: list[dict[str, str]],
@@ -175,8 +175,8 @@ def call_openrouter(
     try:
         return _ai_request(messages, ai_config=ai_config, structured=False, max_tokens=max_tokens)
     except RuntimeError as first_error:
-        # Never repeat a request that the provider rejected with 429.
-        # A blind retry can consume the user's rate-limit budget again.
+                                                                     
+                                                                       
         if "rate limit (429)" in str(first_error).lower():
             raise
 
@@ -195,9 +195,9 @@ def call_openrouter(
             ) from second_error
 
 
-# =========================================================
-# WEBSITE + LEAD CONTEXT
-# =========================================================
+                                                           
+                        
+                                                           
 
 def build_lead_context(
     lead: dict[str, Any],
@@ -220,8 +220,8 @@ def build_lead_context(
             )
         )
 
-    # This is THE important part:
-    # preserve every non-sensitive source field.
+                                 
+                                                
     raw_data = (
         lead.get(
             "source_data"
@@ -288,15 +288,15 @@ def build_lead_context(
         "website_text":
             website_text,
 
-        # ORIGINAL ROW
+                      
         "raw_spreadsheet_fields":
             raw_data,
     }
 
 
-# =========================================================
-# ANALYZE + GENERATE
-# =========================================================
+                                                           
+                    
+                                                           
 
 def analyze_and_generate_batch(
     leads: list[dict[str, Any]],
@@ -333,9 +333,9 @@ def analyze_and_generate_batch(
     )
 
 
-    # =====================================================
-    # PROMPT
-    # =====================================================
+                                                           
+            
+                                                           
 
     prompt = f"""
 You are the lead intelligence and personalized outreach
@@ -637,9 +637,9 @@ There must be one result for every supplied lead.
 """
 
 
-    # =====================================================
-    # CALL MODEL
-    # =====================================================
+                                                           
+                
+                                                           
 
     content = call_openrouter(
         [
@@ -661,9 +661,9 @@ There must be one result for every supplied lead.
     )
 
 
-    # =====================================================
-    # PARSE
-    # =====================================================
+                                                           
+           
+                                                           
 
     cleaned = clean_model_output(
         content

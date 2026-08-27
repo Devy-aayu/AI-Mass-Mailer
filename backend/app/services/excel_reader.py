@@ -236,8 +236,8 @@ def extract_leads(
             )
         ) or ""
 
-        # A lead is usable when it has either
-        # email OR phone.
+                                             
+                         
         if not email and not phone:
             continue
 
@@ -289,14 +289,14 @@ def extract_leads(
                 website
             )
 
-        # IMPORTANT:
-        # Preserve the entire useful source row.
-        #
-        # Therefore:
-        # "bussiness": "clinic"
-        #
-        # survives even if Python's semantic detector
-        # doesn't recognize the misspelled header.
+                    
+                                                
+         
+                    
+                               
+         
+                                                     
+                                                  
         raw_data = build_raw_data(
             row
         )

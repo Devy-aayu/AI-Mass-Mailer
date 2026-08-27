@@ -68,8 +68,8 @@ def _set_session(
     response: Response,
     user_id: str,
 ) -> None:
-    # The browser now talks to FastAPI through Ritmailer's same-origin Next.js
-    # proxy, so a first-party Lax cookie is both safer and sufficient.
+                                                                              
+                                                                      
     samesite_val = "lax"
 
     response.set_cookie(
@@ -77,12 +77,12 @@ def _set_session(
         value=create_access_token(user_id),
         httponly=True,
 
-        # Production HTTPS => True
+                                  
         secure=AUTH_COOKIE_SECURE,
 
-        # IMPORTANT:
-        # The cookie is scoped to the Ritmailer frontend origin by the Next.js proxy.
-        # Lax blocks cross-site POST-based CSRF while still supporting normal navigation.
+                    
+                                                                                     
+                                                                                         
         samesite=samesite_val,
 
         max_age=60 * 60 * 24 * 7,

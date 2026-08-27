@@ -67,7 +67,7 @@ async def send_campaign(request: SendRequest):
                 "error": str(error),
             })
 
-        # Small delay between requests.
+                                       
         time.sleep(0.2)
 
     successful = sum(
