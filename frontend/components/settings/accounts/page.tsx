@@ -628,7 +628,7 @@ export default function AccountsPage() {
 
           <button
             type="button"
-            className="btn btn-secondary"
+            className="btn btn_secondary"
             onClick={() =>
               setShowSMTP(
                 !showSMTP
@@ -998,7 +998,7 @@ function AccountRow({
 
       <button
         type="button"
-        className="btn btn-secondary"
+        className="btn btn_secondary"
         onClick={() =>
           onDisconnect(
             account
@@ -1042,7 +1042,7 @@ function ProviderButton({
       href={
         href
       }
-      className="btn btn-secondary"
+      className="btn btn_secondary"
       style={{
         minHeight:
           62,

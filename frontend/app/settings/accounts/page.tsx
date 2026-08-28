@@ -372,7 +372,7 @@ export default function AccountsPage() {
           <div style={{ display: "flex", gap: 10, flexWrap: "wrap" }}>
             <button
               type="button"
-              className="btn btn-primary"
+              className="btn btn_primary"
               disabled={loading || accounts.length === 0}
               onClick={() => { sessionStorage.removeItem("ritmailer_onboarding"); sessionStorage.removeItem("ritnavOnboarding"); router.push("/settings/ai?onboarding=1"); }}
             >
@@ -380,7 +380,7 @@ export default function AccountsPage() {
             </button>
             <button
               type="button"
-              className="btn btn-secondary"
+              className="btn btn_secondary"
               onClick={() => { sessionStorage.removeItem("ritmailer_onboarding"); sessionStorage.removeItem("ritnavOnboarding"); router.push("/"); }}
             >
               Go to Home
@@ -713,7 +713,7 @@ export default function AccountsPage() {
 
           <button
             type="button"
-            className="btn btn-secondary"
+            className="btn btn_secondary"
             onClick={() =>
               setShowSMTP(
                 !showSMTP
@@ -1083,7 +1083,7 @@ function AccountRow({
 
       <button
         type="button"
-        className="btn btn-secondary"
+        className="btn btn_secondary"
         onClick={() =>
           onDisconnect(
             account
@@ -1134,7 +1134,7 @@ function ProviderButton({
           sessionStorage.setItem("ritnavOnboarding", "1");
         }
       }}
-      className="btn btn-secondary"
+      className="btn btn_secondary"
       style={{
         minHeight:
           62,

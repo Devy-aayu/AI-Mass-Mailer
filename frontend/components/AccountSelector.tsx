@@ -166,10 +166,10 @@ export default function AccountSelector({
       }}
     >
 
-      <div className="card-body">
+      <div className="card_body">
 
         <label
-          className="field-label"
+          className="field_label"
         >
           Sending account
         </label>
@@ -284,7 +284,7 @@ export default function AccountSelector({
                     key={
                       provider
                     }
-                    className="btn btn-secondary"
+                    className="btn btn_secondary"
                     href={
                       getConnectUrl(
                         provider

@@ -121,11 +121,11 @@ export default function UploadPage() {
 
   return (
 
-    <div className="app-shell">
+    <div className="app_shell">
 
       <Sidebar />
 
-      <div className="main-area">
+      <div className="main_area">
 
         <Topbar title="New Campaign" />
 
@@ -133,16 +133,16 @@ export default function UploadPage() {
 
           {!accountsLoading && accounts.length === 0 && !result && (
             <div className="card" style={{ maxWidth: 760, margin: "40px auto" }}>
-              <div className="card-body">
-                <h1 className="page-title" style={{ fontSize: 26 }}>Connect a sending account first</h1>
-                <p className="page-description" style={{ marginBottom: 20 }}>
+              <div className="card_body">
+                <h1 className="page_title" style={{ fontSize: 26 }}>Connect a sending account first</h1>
+                <p className="page_description" style={{ marginBottom: 20 }}>
                   At least one Gmail, Outlook, Zoho, or SMTP mailbox must be connected before you can upload leads or create a campaign.
                 </p>
-                {accountError && <div className="auth-error">{accountError}</div>}
+                {accountError && <div className="auth_error">{accountError}</div>}
                 <div style={{ display: "flex", gap: 10, flexWrap: "wrap" }}>
-                  <a className="btn btn-primary" href={getConnectUrl("gmail")} style={{ textDecoration: "none" }}>Connect Gmail</a>
-                  <a className="btn btn-secondary" href={getConnectUrl("outlook")} style={{ textDecoration: "none" }}>Connect Outlook</a>
-                  <a className="btn btn-secondary" href="/settings/accounts" style={{ textDecoration: "none" }}>Zoho / Custom SMTP</a>
+                  <a className="btn btn_primary" href={getConnectUrl("gmail")} style={{ textDecoration: "none" }}>Connect Gmail</a>
+                  <a className="btn btn_secondary" href={getConnectUrl("outlook")} style={{ textDecoration: "none" }}>Connect Outlook</a>
+                  <a className="btn btn_secondary" href="/settings/accounts" style={{ textDecoration: "none" }}>Zoho / Custom SMTP</a>
                 </div>
               </div>
             </div>
@@ -154,17 +154,17 @@ export default function UploadPage() {
 
           {!accountsLoading && accounts.length > 0 && !result && (
 
-            <div className="upload-container">
+            <div className="upload_container">
 
-              <div className="page-header">
+              <div className="page_header">
 
                 <div>
 
-                  <h1 className="page-title">
+                  <h1 className="page_title">
                     Import leads
                   </h1>
 
-                  <p className="page-description">
+                  <p className="page_description">
                     Upload the CSV or Excel file generated
                     by your lead generator.
                   </p>
@@ -174,7 +174,7 @@ export default function UploadPage() {
               </div>
 
 
-              <div className="card upload-card">
+              <div className="card upload_card">
 
                 <FileUploader
                   campaignId={campaignId}
@@ -196,15 +196,15 @@ export default function UploadPage() {
 
             <div>
 
-              <div className="page-header">
+              <div className="page_header">
 
                 <div>
 
-                  <h1 className="page-title">
+                  <h1 className="page_title">
                     Leads imported
                   </h1>
 
-                  <p className="page-description">
+                  <p className="page_description">
                     Your file has been analyzed and the
                     available contact methods were detected.
                   </p>
@@ -220,7 +220,7 @@ export default function UploadPage() {
                 >
 
                   <button
-                    className="btn btn-secondary"
+                    className="btn btn_secondary"
                     onClick={() =>
                       setResult(null)
                     }
@@ -230,7 +230,7 @@ export default function UploadPage() {
 
 
                   <button
-                    className="btn btn-primary"
+                    className="btn btn_primary"
                     onClick={continueToCompose}
                     disabled={
                       result.email_leads === 0
@@ -253,28 +253,28 @@ export default function UploadPage() {
               {}
               {}
 
-              <div className="stats-grid">
+              <div className="stats_grid">
 
-                <div className="stat-card">
+                <div className="stat_card">
 
-                  <div className="stat-label">
+                  <div className="stat_label">
                     Total rows
                   </div>
 
-                  <div className="stat-value">
+                  <div className="stat_value">
                     {result.total_rows}
                   </div>
 
                 </div>
 
 
-                <div className="stat-card">
+                <div className="stat_card">
 
-                  <div className="stat-label">
+                  <div className="stat_label">
                     Usable leads
                   </div>
 
-                  <div className="stat-value">
+                  <div className="stat_value">
                     {result.usable_leads}
                   </div>
 
@@ -291,13 +291,13 @@ export default function UploadPage() {
                 </div>
 
 
-                <div className="stat-card">
+                <div className="stat_card">
 
-                  <div className="stat-label">
+                  <div className="stat_label">
                     Email leads
                   </div>
 
-                  <div className="stat-value">
+                  <div className="stat_value">
                     {result.email_leads}
                   </div>
 
@@ -314,13 +314,13 @@ export default function UploadPage() {
                 </div>
 
 
-                <div className="stat-card">
+                <div className="stat_card">
 
-                  <div className="stat-label">
+                  <div className="stat_label">
                     Phone leads
                   </div>
 
-                  <div className="stat-value">
+                  <div className="stat_value">
                     {result.phone_leads}
                   </div>
 
@@ -337,13 +337,13 @@ export default function UploadPage() {
                 </div>
 
 
-                <div className="stat-card">
+                <div className="stat_card">
 
-                  <div className="stat-label">
+                  <div className="stat_label">
                     No contact
                   </div>
 
-                  <div className="stat-value">
+                  <div className="stat_value">
                     {result.no_contact_rows}
                   </div>
 
@@ -373,13 +373,13 @@ export default function UploadPage() {
                 }}
               >
 
-                <div className="card-header">
+                <div className="card_header">
 
-                  <h2 className="card-title">
+                  <h2 className="card_title">
                     Detected fields
                   </h2>
 
-                  <p className="card-description">
+                  <p className="card_description">
                     Detection uses the actual cell values,
                     not only the column names.
                   </p>
@@ -489,7 +489,7 @@ export default function UploadPage() {
 
               <div className="card">
 
-                <div className="card-header">
+                <div className="card_header">
 
                   <div
                     style={{
@@ -501,11 +501,11 @@ export default function UploadPage() {
 
                     <div>
 
-                      <h2 className="card-title">
+                      <h2 className="card_title">
                         Leads
                       </h2>
 
-                      <p className="card-description">
+                      <p className="card_description">
                         All usable leads are retained.
                       </p>
 
@@ -719,7 +719,7 @@ export default function UploadPage() {
               >
 
                 <button
-                  className="btn btn-primary"
+                  className="btn btn_primary"
                   onClick={continueToCompose}
                   disabled={
                     result.email_leads === 0
@@ -885,17 +885,17 @@ function Sidebar() {
 
       <div className="brand">
 
-        <div className="brand-logo">
+        <div className="brand_logo">
           R
         </div>
 
         <div>
 
-          <div className="brand-name">
+          <div className="brand_name">
             Ritmailer
           </div>
 
-          <div className="brand-subtitle">
+          <div className="brand_subtitle">
             MAILER
           </div>
 
@@ -904,7 +904,7 @@ function Sidebar() {
       </div>
 
 
-      <div className="nav-label">
+      <div className="nav_label">
         Workspace
       </div>
 
@@ -913,9 +913,9 @@ function Sidebar() {
 
         <a
           href="/"
-          className="nav-item"
+          className="nav_item"
         >
-          <span className="nav-icon">
+          <span className="nav_icon">
             Home
           </span>
 
@@ -927,9 +927,9 @@ function Sidebar() {
 
         <a
           href="/upload"
-          className="nav-item active"
+          className="nav_item active"
         >
-          <span className="nav-icon">
+          <span className="nav_icon">
             New
           </span>
 
@@ -941,9 +941,9 @@ function Sidebar() {
 
         <a
           href="/upload"
-          className="nav-item"
+          className="nav_item"
         >
-          <span className="nav-icon">
+          <span className="nav_icon">
             Leads
           </span>
 
@@ -973,7 +973,7 @@ function Topbar({
 
     <header className="topbar">
 
-      <div className="topbar-title">
+      <div className="topbar_title">
         {title}
       </div>
 
@@ -1007,7 +1007,7 @@ function Topbar({
         </div>
 
 
-        <div className="account-avatar">
+        <div className="account_avatar">
           R
         </div>
 

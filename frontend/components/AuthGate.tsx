@@ -43,14 +43,14 @@ export default function AuthGate({ children }: { children: React.ReactNode }) {
 
   if (state === "unavailable") {
     return (
-      <main className="session-recovery">
-        <div className="session-recovery-card">
+      <main className="session_recovery">
+        <div className="session_recovery_card">
           <div className="eyebrow">RITMAILER</div>
           <h1>We couldn&apos;t verify your session.</h1>
           <p>{error || "The service may be briefly unavailable. Your account has not been signed out."}</p>
-          <div className="session-recovery-actions">
-            <button className="btn btn-primary" onClick={() => window.location.reload()}>Try again</button>
-            <button className="btn btn-secondary" onClick={() => router.replace("/login")}>Open sign in</button>
+          <div className="session_recovery_actions">
+            <button className="btn btn_primary" onClick={() => window.location.reload()}>Try again</button>
+            <button className="btn btn_secondary" onClick={() => router.replace("/login")}>Open sign in</button>
           </div>
         </div>
       </main>
@@ -59,8 +59,8 @@ export default function AuthGate({ children }: { children: React.ReactNode }) {
 
   if (state === "checking") {
     return (
-      <main className="session-check">
-        <div className="session-mark">R</div>
+      <main className="session_check">
+        <div className="session_mark">R</div>
         <div>Checking your workspace…</div>
       </main>
     );

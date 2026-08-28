@@ -49,17 +49,17 @@ export default function AISettingsPage() {
       <div style={{ fontSize: 13, color: "#777", lineHeight: 1.6, marginBottom: 12 }}>
         Add your own API key and model to unlock AI email generation. You can skip this and still write and send campaigns manually.
       </div>
-      <button type="button" className="btn btn-secondary" onClick={() => router.replace("/")}>Skip AI & Go Home</button>
+      <button type="button" className="btn btn_secondary" onClick={() => router.replace("/")}>Skip AI & Go Home</button>
     </div>}
     {config && <div style={{ marginBottom: 18, padding: 14, borderRadius: 10, background: "#f2fbf4", border: "1px solid #cfe8d4", fontSize: 13 }}>Configured: <b>{config.provider}</b> · <b>{config.model}</b></div>}
-    {error && <div className="auth-error">{error}</div>}
+    {error && <div className="auth_error">{error}</div>}
     {message && <div style={{ marginBottom: 18, padding: 12, borderRadius: 9, background: "#f2fbf4", color: "#226b2d", fontSize: 13 }}>{message}</div>}
-    <form className="card" onSubmit={submit}><div className="card-body">
-      <div className="field"><label className="field-label">Provider</label><select className="input" value={provider} onChange={e => setProvider(e.target.value as typeof provider)}><option value="openrouter">OpenRouter</option><option value="openai_compatible">OpenAI-compatible endpoint</option></select></div>
-      <div className="field"><label className="field-label">Model</label><input className="input" value={model} onChange={e => setModel(e.target.value)} placeholder="google/gemma-..." required /></div>
-      {provider === "openai_compatible" && <div className="field"><label className="field-label">Base URL</label><input className="input" value={baseUrl} onChange={e => setBaseUrl(e.target.value)} placeholder="https://provider.example.com/v1" required /></div>}
-      <div className="field"><label className="field-label">API key</label><input className="input" type="password" value={apiKey} onChange={e => setApiKey(e.target.value)} placeholder={config ? "Enter a new key to replace the stored key" : "Paste your provider API key"} required /></div>
-      <div style={{ display: "flex", gap: 10, flexWrap: "wrap" }}><button className="btn btn-primary" disabled={saving}>{saving ? "Saving..." : "Save AI configuration"}</button>{config && <button type="button" className="btn btn-secondary" onClick={remove}>Remove AI configuration</button>}</div>
+    <form className="card" onSubmit={submit}><div className="card_body">
+      <div className="field"><label className="field_label">Provider</label><select className="input" value={provider} onChange={e => setProvider(e.target.value as typeof provider)}><option value="openrouter">OpenRouter</option><option value="openai_compatible">OpenAI-compatible endpoint</option></select></div>
+      <div className="field"><label className="field_label">Model</label><input className="input" value={model} onChange={e => setModel(e.target.value)} placeholder="google/gemma-..." required /></div>
+      {provider === "openai_compatible" && <div className="field"><label className="field_label">Base URL</label><input className="input" value={baseUrl} onChange={e => setBaseUrl(e.target.value)} placeholder="https://provider.example.com/v1" required /></div>}
+      <div className="field"><label className="field_label">API key</label><input className="input" type="password" value={apiKey} onChange={e => setApiKey(e.target.value)} placeholder={config ? "Enter a new key to replace the stored key" : "Paste your provider API key"} required /></div>
+      <div style={{ display: "flex", gap: 10, flexWrap: "wrap" }}><button className="btn btn_primary" disabled={saving}>{saving ? "Saving..." : "Save AI configuration"}</button>{config && <button type="button" className="btn btn_secondary" onClick={remove}>Remove AI configuration</button>}</div>
     </div></form>
   </main>;
 }

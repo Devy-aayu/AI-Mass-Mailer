@@ -287,14 +287,14 @@ export default function AIPersonalizer({
       }}
     >
 
-      <div className="card-header">
+      <div className="card_header">
 
-        <h2 className="card-title">
+        <h2 className="card_title">
            AI Lead Intelligence
         </h2>
 
 
-        <p className="card-description">
+        <p className="card_description">
           AI analyzes the original lead data,
           identifies the business context,
           then writes a business-specific email.
@@ -303,11 +303,11 @@ export default function AIPersonalizer({
       </div>
 
 
-      <div className="card-body">
+      <div className="card_body">
 
         <div className="field">
 
-          <label className="field-label">
+          <label className="field_label">
             What are you offering?
           </label>
 
@@ -375,7 +375,7 @@ Never invent problems or pretend that we have contacted the business before.`}
 
         <div className="field">
 
-          <label className="field-label">
+          <label className="field_label">
             Tone
           </label>
 
@@ -415,7 +415,7 @@ Never invent problems or pretend that we have contacted the business before.`}
 
         <button
           type="button"
-          className="btn btn-primary"
+          className="btn btn_primary"
           disabled={
             generating ||
             !emailLeads.length

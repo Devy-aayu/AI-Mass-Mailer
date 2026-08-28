@@ -792,12 +792,12 @@ export default function SendingPage() {
 
     return (
 
-      <div className="app-shell">
+      <div className="app_shell">
 
         <Sidebar />
 
 
-        <div className="main-area">
+        <div className="main_area">
 
           <Topbar
             title="Sending Campaign"
@@ -806,27 +806,27 @@ export default function SendingPage() {
 
           <main className="page">
 
-            <div className="send-center">
+            <div className="send_center">
 
               <div className="card">
 
-                <div className="card-body">
+                <div className="card_body">
 
-                  <h1 className="page-title">
+                  <h1 className="page_title">
                     Preparing campaign...
                   </h1>
 
 
-                  <p className="page-description">
+                  <p className="page_description">
                     Loading your recipients and
                     campaign details.
                   </p>
 
 
-                  <div className="progress-track">
+                  <div className="progress_track">
 
                     <div
-                      className="progress-bar"
+                      className="progress_bar"
                       style={{
                         width:
                           "10%",
@@ -836,7 +836,7 @@ export default function SendingPage() {
                   </div>
 
 
-                  <div className="progress-text">
+                  <div className="progress_text">
 
                     <span>
                       Preparing
@@ -882,12 +882,12 @@ export default function SendingPage() {
 
     return (
 
-      <div className="app-shell">
+      <div className="app_shell">
 
         <Sidebar />
 
 
-        <div className="main-area">
+        <div className="main_area">
 
           <Topbar
             title="Sending Campaign"
@@ -896,18 +896,18 @@ export default function SendingPage() {
 
           <main className="page">
 
-            <div className="send-center">
+            <div className="send_center">
 
               <div className="card">
 
-                <div className="card-body">
+                <div className="card_body">
 
-                  <h1 className="page-title">
+                  <h1 className="page_title">
                     Sending campaign
                   </h1>
 
 
-                  <p className="page-description">
+                  <p className="page_description">
 
                     {isAI
                       ? "Your individually personalized emails are being sent."
@@ -916,10 +916,10 @@ export default function SendingPage() {
                   </p>
 
 
-                  <div className="progress-track">
+                  <div className="progress_track">
 
                     <div
-                      className="progress-bar"
+                      className="progress_bar"
                       style={{
                         width:
                           `${progress}%`,
@@ -929,7 +929,7 @@ export default function SendingPage() {
                   </div>
 
 
-                  <div className="progress-text">
+                  <div className="progress_text">
 
                     <span>
                       {isAI
@@ -968,12 +968,12 @@ export default function SendingPage() {
 
     return (
 
-      <div className="app-shell">
+      <div className="app_shell">
 
         <Sidebar />
 
 
-        <div className="main-area">
+        <div className="main_area">
 
           <Topbar
             title="Campaign Error"
@@ -982,11 +982,11 @@ export default function SendingPage() {
 
           <main className="page">
 
-            <div className="send-center">
+            <div className="send_center">
 
               <div className="card">
 
-                <div className="complete-box">
+                <div className="complete_box">
 
                   <div
                     style={{
@@ -1018,13 +1018,13 @@ export default function SendingPage() {
                   </div>
 
 
-                  <h1 className="page-title">
+                  <h1 className="page_title">
                     Campaign could not be sent
                   </h1>
 
 
                   <p
-                    className="page-description"
+                    className="page_description"
                     style={{
                       maxWidth:
                         650,
@@ -1052,7 +1052,7 @@ export default function SendingPage() {
                   >
 
                     <button
-                      className="btn btn-secondary"
+                      className="btn btn_secondary"
                       onClick={() =>
                         router.push(
                           "/compose"
@@ -1064,7 +1064,7 @@ export default function SendingPage() {
 
 
                     <button
-                      className="btn btn-primary"
+                      className="btn btn_primary"
                       onClick={() =>
                         window.location.reload()
                       }
@@ -1093,12 +1093,12 @@ export default function SendingPage() {
 
   return (
 
-    <div className="app-shell">
+    <div className="app_shell">
 
       <Sidebar />
 
 
-      <div className="main-area">
+      <div className="main_area">
 
         <Topbar
           title="Campaign Completed"
@@ -1107,43 +1107,43 @@ export default function SendingPage() {
 
         <main className="page">
 
-          <div className="send-center">
+          <div className="send_center">
 
             <div className="card">
 
-              <div className="complete-box">
+              <div className="complete_box">
 
 
 
-                <div className="complete-icon">
+                <div className="complete_icon">
                   
                 </div>
 
 
 
-                <h1 className="page-title">
+                <h1 className="page_title">
                   Campaign Completed
                 </h1>
 
 
-                <p className="page-description">
+                <p className="page_description">
                   Your email campaign has finished processing.
                 </p>
 
 
                
 
-                <div className="result-stats">
+                <div className="result_stats">
 
                   <div>
 
-                    <div className="result-stat-value">
+                    <div className="result_stat_value">
                       {result?.total ??
                         0}
                     </div>
 
 
-                    <div className="result-stat-label">
+                    <div className="result_stat_label">
                       Total
                     </div>
 
@@ -1152,13 +1152,13 @@ export default function SendingPage() {
 
                   <div>
 
-                    <div className="result-stat-value">
+                    <div className="result_stat_value">
                       {result?.sent ??
                         0}
                     </div>
 
 
-                    <div className="result-stat-label">
+                    <div className="result_stat_label">
                       Sent
                     </div>
 
@@ -1167,13 +1167,13 @@ export default function SendingPage() {
 
                   <div>
 
-                    <div className="result-stat-value">
+                    <div className="result_stat_value">
                       {result?.failed ??
                         0}
                     </div>
 
 
-                    <div className="result-stat-label">
+                    <div className="result_stat_label">
                       Failed
                     </div>
 
@@ -1384,7 +1384,7 @@ export default function SendingPage() {
                 
 
                 <button
-                  className="btn btn-primary"
+                  className="btn btn_primary"
                   style={{
                     marginTop:
                       28,
@@ -1582,19 +1582,19 @@ function Sidebar() {
 
       <div className="brand">
 
-        <div className="brand-logo">
+        <div className="brand_logo">
           R
         </div>
 
 
         <div>
 
-          <div className="brand-name">
+          <div className="brand_name">
             Ritmailer
           </div>
 
 
-          <div className="brand-subtitle">
+          <div className="brand_subtitle">
             MAILER
           </div>
 
@@ -1603,7 +1603,7 @@ function Sidebar() {
       </div>
 
 
-      <div className="nav-label">
+      <div className="nav_label">
         Workspace
       </div>
 
@@ -1612,10 +1612,10 @@ function Sidebar() {
 
         <a
           href="/"
-          className="nav-item"
+          className="nav_item"
         >
 
-          <span className="nav-icon">
+          <span className="nav_icon">
             Home
           </span>
 
@@ -1629,10 +1629,10 @@ function Sidebar() {
 
         <a
           href="/upload"
-          className="nav-item"
+          className="nav_item"
         >
 
-          <span className="nav-icon">
+          <span className="nav_icon">
             New
           </span>
 
@@ -1646,10 +1646,10 @@ function Sidebar() {
 
         <a
           href="/upload"
-          className="nav-item"
+          className="nav_item"
         >
 
-          <span className="nav-icon">
+          <span className="nav_icon">
             Leads
           </span>
 
@@ -1680,7 +1680,7 @@ function Topbar({
 
     <header className="topbar">
 
-      <div className="topbar-title">
+      <div className="topbar_title">
         {title}
       </div>
 
@@ -1720,7 +1720,7 @@ function Topbar({
         </div>
 
 
-        <div className="account-avatar">
+        <div className="account_avatar">
           R
         </div>
 

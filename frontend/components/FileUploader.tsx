@@ -57,23 +57,23 @@ export default function FileUploader({
   return (
     <div>
 
-      <div className="drop-zone">
+      <div className="drop_zone">
 
-        <div className="upload-icon">
+        <div className="upload_icon">
           New
         </div>
 
-        <div className="upload-title">
+        <div className="upload_title">
           Upload your lead file
         </div>
 
-        <div className="upload-description">
+        <div className="upload_description">
           CSV, XLSX or XLS files are supported.
           <br />
           We'll automatically detect names and email addresses.
         </div>
 
-        <label className="file-button">
+        <label className="file_button">
 
           {loading
             ? "Processing..."
@@ -83,7 +83,7 @@ export default function FileUploader({
             type="file"
             accept=".csv,.xlsx,.xls"
             onChange={handleFile}
-            className="file-input"
+            className="file_input"
             disabled={loading}
           />
 

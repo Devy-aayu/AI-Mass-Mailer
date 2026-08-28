@@ -97,15 +97,15 @@ export default function GmailSettingsPage() {
 
 
   return (
-    <div className="app-shell">
+    <div className="app_shell">
 
       <Sidebar />
 
-      <div className="main-area">
+      <div className="main_area">
 
         <header className="topbar">
 
-          <div className="topbar-title">
+          <div className="topbar_title">
             Gmail Settings
           </div>
 
@@ -114,15 +114,15 @@ export default function GmailSettingsPage() {
 
         <main className="page">
 
-          <div className="page-header">
+          <div className="page_header">
 
             <div>
 
-              <h1 className="page-title">
+              <h1 className="page_title">
                 Gmail connection
               </h1>
 
-              <p className="page-description">
+              <p className="page_description">
                 Connect the Gmail account that Ritmailer will use to send campaigns.
               </p>
 
@@ -133,7 +133,7 @@ export default function GmailSettingsPage() {
 
           <div className="card">
 
-            <div className="card-body">
+            <div className="card_body">
 
               <div
                 style={{
@@ -190,7 +190,7 @@ export default function GmailSettingsPage() {
                 {!loading && status.connected && (
 
                   <button
-                    className="btn btn-secondary"
+                    className="btn btn_secondary"
                     onClick={disconnect}
                     disabled={disconnecting}
                   >
@@ -205,7 +205,7 @@ export default function GmailSettingsPage() {
                 {!loading && !status.connected && (
 
                   <button
-                    className="btn btn-primary"
+                    className="btn btn_primary"
                     onClick={connect}
                   >
                     Connect Gmail
@@ -265,17 +265,17 @@ function Sidebar() {
 
       <div className="brand">
 
-        <div className="brand-logo">
+        <div className="brand_logo">
           R
         </div>
 
         <div>
 
-          <div className="brand-name">
+          <div className="brand_name">
             Ritmailer
           </div>
 
-          <div className="brand-subtitle">
+          <div className="brand_subtitle">
             MAILER
           </div>
 
@@ -284,7 +284,7 @@ function Sidebar() {
       </div>
 
 
-      <div className="nav-label">
+      <div className="nav_label">
         Workspace
       </div>
 
@@ -293,9 +293,9 @@ function Sidebar() {
 
         <a
           href="/"
-          className="nav-item"
+          className="nav_item"
         >
-          <span className="nav-icon">
+          <span className="nav_icon">
             Home
           </span>
 
@@ -305,9 +305,9 @@ function Sidebar() {
 
         <a
           href="/upload"
-          className="nav-item"
+          className="nav_item"
         >
-          <span className="nav-icon">
+          <span className="nav_icon">
             New
           </span>
 
@@ -318,7 +318,7 @@ function Sidebar() {
 
 
       <div
-        className="nav-label"
+        className="nav_label"
         style={{
           marginTop: 28,
         }}
@@ -331,9 +331,9 @@ function Sidebar() {
 
         <a
           href="/settings/gmail"
-          className="nav-item active"
+          className="nav_item active"
         >
-          <span className="nav-icon">
+          <span className="nav_icon">
             G
           </span>
 

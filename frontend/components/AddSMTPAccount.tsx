@@ -277,7 +277,7 @@ export default function AddSMTPAccount({
 
       <button
         type="button"
-        className="btn btn-secondary"
+        className="btn btn_secondary"
         onClick={
           applyZohoDefaults
         }
@@ -294,7 +294,7 @@ export default function AddSMTPAccount({
 
       <div className="field">
 
-        <label className="field-label">
+        <label className="field_label">
           Email address
         </label>
 
@@ -321,7 +321,7 @@ export default function AddSMTPAccount({
 
       <div className="field">
 
-        <label className="field-label">
+        <label className="field_label">
           Display name
         </label>
 
@@ -347,7 +347,7 @@ export default function AddSMTPAccount({
 
       <div className="field">
 
-        <label className="field-label">
+        <label className="field_label">
           SMTP host
         </label>
 
@@ -384,7 +384,7 @@ export default function AddSMTPAccount({
 
         <div className="field">
 
-          <label className="field-label">
+          <label className="field_label">
             Port
           </label>
 
@@ -410,7 +410,7 @@ export default function AddSMTPAccount({
 
         <div className="field">
 
-          <label className="field-label">
+          <label className="field_label">
             Security
           </label>
 
@@ -449,7 +449,7 @@ export default function AddSMTPAccount({
 
       <div className="field">
 
-        <label className="field-label">
+        <label className="field_label">
           SMTP username
         </label>
 
@@ -476,7 +476,7 @@ export default function AddSMTPAccount({
 
       <div className="field">
 
-        <label className="field-label">
+        <label className="field_label">
           App-specific password
         </label>
 
@@ -582,7 +582,7 @@ export default function AddSMTPAccount({
 
         <button
           type="button"
-          className="btn btn-secondary"
+          className="btn btn_secondary"
           disabled={
             testing ||
             saving
@@ -599,7 +599,7 @@ export default function AddSMTPAccount({
 
         <button
           type="button"
-          className="btn btn-primary"
+          className="btn btn_primary"
           disabled={
             testing ||
             saving

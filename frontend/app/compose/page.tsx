@@ -527,12 +527,12 @@ export default function ComposePage() {
 
   return (
 
-    <div className="app-shell">
+    <div className="app_shell">
 
       <Sidebar />
 
 
-      <div className="main-area">
+      <div className="main_area">
 
         <Topbar
           title="Compose Campaign"
@@ -543,16 +543,16 @@ export default function ComposePage() {
 
           
 
-          <div className="page-header">
+          <div className="page_header">
 
             <div>
 
-              <h1 className="page-title">
+              <h1 className="page_title">
                 Compose email
               </h1>
 
 
-              <p className="page-description">
+              <p className="page_description">
                 Write your campaign, personalize it with AI,
                 edit the generated messages, then send.
               </p>
@@ -585,7 +585,7 @@ export default function ComposePage() {
           
 
           <div
-            className="composer-layout"
+            className="composer_layout"
           >
 
            
@@ -597,14 +597,14 @@ export default function ComposePage() {
 
               <div className="card">
 
-                <div className="card-header">
+                <div className="card_header">
 
-                  <h2 className="card-title">
+                  <h2 className="card_title">
                     Email
                   </h2>
 
 
-                  <p className="card-description">
+                  <p className="card_description">
                     Create your base campaign.
                     AI can personalize it for every recipient.
                   </p>
@@ -612,14 +612,14 @@ export default function ComposePage() {
                 </div>
 
 
-                <div className="card-body">
+                <div className="card_body">
 
 
                 
 
                   <div className="field">
 
-                    <label className="field-label">
+                    <label className="field_label">
                       Subject
                     </label>
 
@@ -657,14 +657,14 @@ export default function ComposePage() {
                       }}
                     >
 
-                      <label className="field-label">
+                      <label className="field_label">
                         Message
                       </label>
 
 
                       <button
                         type="button"
-                        className="btn btn-secondary"
+                        className="btn btn_secondary"
                         style={{
                           padding:
                             "6px 9px",
@@ -751,7 +751,7 @@ Ritmailer`}
 
                     <button
                       type="button"
-                      className="btn btn-secondary"
+                      className="btn btn_secondary"
                       onClick={() =>
                         router.push(
                           "/upload"
@@ -773,7 +773,7 @@ Ritmailer`}
 
                       <button
                         type="button"
-                        className="btn btn-secondary"
+                        className="btn btn_secondary"
                         onClick={
                           previewMessage
                         }
@@ -787,7 +787,7 @@ Ritmailer`}
 
                         <button
                           type="button"
-                          className="btn btn-primary"
+                          className="btn btn_primary"
                           onClick={
                             continueStandardCampaign
                           }
@@ -837,7 +837,7 @@ Ritmailer`}
                 >
 
                   <div
-                    className="card-body"
+                    className="card_body"
                   >
 
                     <div
@@ -887,7 +887,7 @@ Ritmailer`}
 
                       <button
                         type="button"
-                        className="btn btn-secondary"
+                        className="btn btn_secondary"
                         onClick={
                           disableAIMode
                         }
@@ -916,7 +916,7 @@ Ritmailer`}
                   }}
                 >
 
-                  <div className="card-header">
+                  <div className="card_header">
 
                     <div
                       style={{
@@ -931,12 +931,12 @@ Ritmailer`}
 
                       <div>
 
-                        <h2 className="card-title">
+                        <h2 className="card_title">
                           AI-generated emails
                         </h2>
 
 
-                        <p className="card-description">
+                        <p className="card_description">
                           Every recipient has their own subject
                           and message.
                         </p>
@@ -946,7 +946,7 @@ Ritmailer`}
 
                       <button
                         type="button"
-                        className="btn btn-secondary"
+                        className="btn btn_secondary"
                         onClick={() =>
                           setShowAIEmails(
                             !showAIEmails
@@ -965,7 +965,7 @@ Ritmailer`}
 
                   {showAIEmails && (
 
-                    <div className="card-body">
+                    <div className="card_body">
 
                       <div
                         style={{
@@ -1100,7 +1100,7 @@ Ritmailer`}
 
                                     <button
                                       type="button"
-                                      className="btn btn-secondary"
+                                      className="btn btn_secondary"
                                       style={{
                                         padding:
                                           "5px 10px",
@@ -1147,7 +1147,7 @@ Ritmailer`}
                                       >
 
                                         <label
-                                          className="field-label"
+                                          className="field_label"
                                         >
                                           Subject
                                         </label>
@@ -1181,7 +1181,7 @@ Ritmailer`}
                                       >
 
                                         <label
-                                          className="field-label"
+                                          className="field_label"
                                         >
                                           Message
                                         </label>
@@ -1223,7 +1223,7 @@ Ritmailer`}
 
                                         <button
                                           type="button"
-                                          className="btn btn-primary"
+                                          className="btn btn_primary"
                                           onClick={() =>
                                             setEditingIndex(
                                               null
@@ -1365,7 +1365,7 @@ Ritmailer`}
 
                         <button
                           type="button"
-                          className="btn btn-primary"
+                          className="btn btn_primary"
                           style={{
                             width:
                               "100%",
@@ -1399,7 +1399,7 @@ Ritmailer`}
             
 
             <div
-              className="card recipient-card"
+              className="card recipient_card"
               style={{
                 overflow:
                   "hidden",
@@ -1408,7 +1408,7 @@ Ritmailer`}
               }}
             >
 
-              <div className="card-header">
+              <div className="card_header">
 
                 <div
                   style={{
@@ -1423,12 +1423,12 @@ Ritmailer`}
 
                   <div>
 
-                    <h2 className="card-title">
+                    <h2 className="card_title">
                       Recipients
                     </h2>
 
 
-                    <p className="card-description">
+                    <p className="card_description">
                       People receiving the email.
                     </p>
 
@@ -1678,17 +1678,17 @@ function Sidebar() {
 
       <div className="brand">
 
-        <div className="brand-logo">
+        <div className="brand_logo">
           R
         </div>
 
         <div>
 
-          <div className="brand-name">
+          <div className="brand_name">
             Ritmailer
           </div>
 
-          <div className="brand-subtitle">
+          <div className="brand_subtitle">
             MAILER
           </div>
 
@@ -1697,7 +1697,7 @@ function Sidebar() {
       </div>
 
 
-      <div className="nav-label">
+      <div className="nav_label">
         Workspace
       </div>
 
@@ -1706,9 +1706,9 @@ function Sidebar() {
 
         <a
           href="/"
-          className="nav-item"
+          className="nav_item"
         >
-          <span className="nav-icon">
+          <span className="nav_icon">
             Home
           </span>
 
@@ -1720,9 +1720,9 @@ function Sidebar() {
 
         <a
           href="/upload"
-          className="nav-item active"
+          className="nav_item active"
         >
-          <span className="nav-icon">
+          <span className="nav_icon">
             New
           </span>
 
@@ -1749,7 +1749,7 @@ function Topbar({
 
     <header className="topbar">
 
-      <div className="topbar-title">
+      <div className="topbar_title">
         {title}
       </div>
 
@@ -1789,7 +1789,7 @@ function Topbar({
         </div>
 
 
-        <div className="account-avatar">
+        <div className="account_avatar">
           R
         </div>
 
