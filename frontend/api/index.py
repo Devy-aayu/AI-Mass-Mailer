@@ -1,10 +1,3 @@
-"""Vercel entrypoint for Ritmailer's FastAPI backend.
-
-Vercel serves this FastAPI application from the same deployment and origin as
-Next.js. API routes therefore remain /api/... and HTTP-only session cookies are
-first-party to the Ritmailer domain.
-"""
-
 from pathlib import Path
 import sys
 
