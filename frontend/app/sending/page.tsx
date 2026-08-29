@@ -10,20 +10,13 @@ import {
   useRouter,
 } from "next/navigation";
 
-
-
-
 const API_URL = "";
-
-
-
 type Lead = {
   name: string;
   email: string;
   phone?: string;
   company?: string;
 };
-
 
 type PersonalizedEmail = {
   name: string;
@@ -85,15 +78,10 @@ export default function SendingPage() {
     setError,
   ] = useState("");
 
-
   const [
     progress,
     setProgress,
   ] = useState(0);
-
-
-  
-
   const hasStarted =
     useRef(false);
 

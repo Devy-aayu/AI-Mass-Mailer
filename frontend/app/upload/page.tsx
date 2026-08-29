@@ -80,19 +80,11 @@ export default function UploadPage() {
 
     setResult(data);
     sessionStorage.setItem("ritnavCampaignId", campaignId);
-
-
-    
-    
-    
-    
     sessionStorage.setItem(
       "ritnavLeads",
       JSON.stringify(data.leads)
     );
-
-
-    
+  
     sessionStorage.setItem(
       "ritnavLeadInfo",
       JSON.stringify({

@@ -38,16 +38,16 @@ export default function LoginPage() {
       <section className="auth_aside">
         <div>
           <div className="auth_brand">RITMAILER</div>
-          <h2>Every send should have a reason.</h2>
-          <p>Ritmailer keeps lead import, personalization, delivery and campaign history in one deliberate workspace.</p>
+          <h2>Fix clients in one click.</h2>
+          <p>Send personalized emails at scale.</p>
         </div>
-        <span className="auth_stamp">Campaign control · built for real sends</span>
+        <span className="auth_stamp">Campaign control · built to lead</span>
       </section>
       <section className="auth_form_side">
         <div className="auth_panel">
-          <div className="eyebrow">Welcome back</div>
+          <div className="eyebrow">Welcome Home</div>
           <h1>Sign in</h1>
-          <p>Open your campaign workspace and continue where you left off.</p>
+          <p>Open your workshop and continue where you left off.</p>
           <form onSubmit={submit}>
             <div className="field"><label className="field_label">Email</label><input className="input" type="email" value={email} onChange={(e) => setEmail(e.target.value)} autoComplete="email" required /></div>
             <div className="field"><label className="field_label">Password</label><input className="input" type="password" value={password} onChange={(e) => setPassword(e.target.value)} autoComplete="current-password" required /></div>
