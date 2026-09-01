@@ -3,6 +3,7 @@
 import { FormEvent, useEffect, useState } from "react";
 import { useRouter, useSearchParams } from "next/navigation";
 import { deleteAIConfig, getAIConfig, saveAIConfig, AIConfig } from "../../../lib/api";
+import WorkspaceNav from "../../../components/WorkspaceNav";
 
 export default function AISettingsPage() {
   const router = useRouter();
@@ -41,7 +42,7 @@ export default function AISettingsPage() {
     catch (e) { setError(e instanceof Error ? e.message : "Could not remove AI configuration."); }
   }
 
-  return <main style={{ maxWidth: 820, margin: "0 auto", padding: "40px 24px 80px" }}>
+  return <div className="app_shell"><WorkspaceNav active="settings" /><div className="main_area"><main className="page" style={{ maxWidth: 820, margin: "0 auto" }}>
     <h1 style={{ marginBottom: 8 }}>AI Settings</h1>
     <p style={{ color: "#777", marginBottom: 16 }}>AI is optional. Normal campaign composition and sending work without it. Add your own provider credentials only when you want AI generation.</p>
     {onboarding && <div style={{ marginBottom: 20, padding: 16, borderRadius: 12, border: "1px solid #e5e5e5", background: "#fff" }}>
@@ -61,5 +62,5 @@ export default function AISettingsPage() {
       <div className="field"><label className="field_label">API key</label><input className="input" type="password" value={apiKey} onChange={e => setApiKey(e.target.value)} placeholder={config ? "Enter a new key to replace the stored key" : "Paste your provider API key"} required /></div>
       <div style={{ display: "flex", gap: 10, flexWrap: "wrap" }}><button className="btn btn_primary" disabled={saving}>{saving ? "Saving..." : "Save AI configuration"}</button>{config && <button type="button" className="btn btn_secondary" onClick={remove}>Remove AI configuration</button>}</div>
     </div></form>
-  </main>;
+  </main></div></div>;
 }

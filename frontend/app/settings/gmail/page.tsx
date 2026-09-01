@@ -314,6 +314,16 @@ function Sidebar() {
           New Campaign
         </a>
 
+      
+
+        <a
+          href="/automations"
+          className="nav_item"
+        >
+          <span className="nav_icon">Soon</span>
+          <span>Automations</span>
+        </a>
+
       </nav>
 
 

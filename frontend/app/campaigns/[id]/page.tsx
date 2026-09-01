@@ -119,4 +119,14 @@ function buildReplaySequence(campaign: (Campaign & { leads: CampaignLead[] }) | 
 function formatDate(value?: number | null) { return value ? new Date(value * 1000).toLocaleString([], { dateStyle: "medium", timeStyle: "short" }) : "—"; }
 function Status({ status }: { status: string }) { const good = status === "sent" || status === "completed"; const bad = status === "failed"; return <span className={`status_pill ${good ? "good" : bad ? "bad" : "warn"}`}><span className="status_dot" style={{ background: "currentColor", marginRight: 0 }} />{status.replace(/_/g, " ")}</span>; }
 function Metric({ label, value, suffix = "" }: { label: string; value: number; suffix?: string }) { return <div className="stat_card"><div className="stat_label">{label}</div><div className="stat_value">{value}{suffix}</div></div>; }
-function Shell({ title, children }: { title: string; children: ReactNode }) { return <div className="app_shell"><aside className="sidebar"><div className="brand"><div className="brand_logo">R</div><div><div className="brand_name">Ritmailer</div><div className="brand_subtitle">CAMPAIGN CONTROL</div></div></div><div className="nav_label">Workspace</div><nav className="nav"><Link href="/" className="nav_item"><span className="nav_icon">Home</span><span>Overview</span></Link><Link href="/upload" className="nav_item"><span className="nav_icon">New</span><span>New campaign</span></Link></nav><div className="nav_label" style={{ marginTop: 28 }}>Account</div><nav className="nav"><Link className="nav_item" href="/settings"><span className="nav_icon">Settings</span><span>Settings</span></Link></nav></aside><div className="main_area"><header className="topbar"><div className="topbar_title">{title}</div></header>{children}</div></div>; }
+function Shell({ title, children }: { title: string; children: ReactNode }) { return <div className="app_shell"><aside className="sidebar"><div className="brand"><div className="brand_logo">R</div><div><div className="brand_name">Ritmailer</div><div className="brand_subtitle">CAMPAIGN CONTROL</div></div></div><div className="nav_label">Workspace</div><nav className="nav"><Link href="/" className="nav_item"><span className="nav_icon">Home</span><span>Overview</span></Link><Link href="/upload" className="nav_item"><span className="nav_icon">New</span><span>New campaign</span></Link>
+
+        <a
+          href="/automations"
+          className="nav_item"
+        >
+          <span className="nav_icon">Soon</span>
+          <span>Automations</span>
+        </a>
+
+      </nav><div className="nav_label" style={{ marginTop: 28 }}>Account</div><nav className="nav"><Link className="nav_item" href="/settings"><span className="nav_icon">Settings</span><span>Settings</span></Link></nav></aside><div className="main_area"><header className="topbar"><div className="topbar_title">{title}</div></header>{children}</div></div>; }

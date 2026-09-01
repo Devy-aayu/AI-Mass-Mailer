@@ -14,6 +14,7 @@ import {
 } from "../../../lib/api";
 
 import AddSMTPAccount from "../../../components/AddSMTPAccount";
+import WorkspaceNav from "../../../components/WorkspaceNav";
 
 
 
@@ -242,17 +243,10 @@ export default function AccountsPage() {
 
 
   return (
-
-    <div
-      style={{
-        maxWidth:
-          900,
-        margin:
-          "0 auto",
-        padding:
-          "40px 24px 80px",
-      }}
-    >
+    <div className="app_shell">
+      <WorkspaceNav active="settings" />
+      <div className="main_area">
+        <div className="page" style={{ maxWidth: 960, margin: "0 auto" }}>
 
       {
 
@@ -880,6 +874,8 @@ export default function AccountsPage() {
 
       </div>
 
+        </div>
+      </div>
     </div>
   );
 }
