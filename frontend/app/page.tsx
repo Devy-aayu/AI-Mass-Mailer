@@ -40,7 +40,7 @@ export default function HomePage() {
             <div>
               <div className="eyebrow">Ritmailer</div>
               <h2>Send mails in one click. Make every message personal.</h2>
-              <p>Import a lead list, personalize it, and keep a precise record of what happened to every recipient.</p>
+              <p>Bring a coffee import the list and sit back to your chair and relax let ritmailer do everything</p>
             </div>
             <div className="hero_note">
               <strong>{successRate}%</strong>
