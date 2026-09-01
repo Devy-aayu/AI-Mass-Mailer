@@ -38,8 +38,8 @@ export default function HomePage() {
         <main className="page">
           <section className="dashboard_hero">
             <div>
-              <div className="eyebrow">Ritmailer / campaign control room</div>
-              <h2>Send less generic mail. Make every message feel deliberate.</h2>
+              <div className="eyebrow">Ritmailer</div>
+              <h2>Send mails in one click. Make every message personal.</h2>
               <p>Import a lead list, personalize it, and keep a precise record of what happened to every recipient.</p>
             </div>
             <div className="hero_note">
@@ -50,7 +50,7 @@ export default function HomePage() {
 
           <div className="page_header">
             <div>
-              <div className="eyebrow">Your workspace</div>
+              <div className="eyebrow">Your workshop</div>
               <h1 className="page_title">Campaigns</h1>
               <p className="page_description">A single view of recipients, delivery and campaign health.</p>
             </div>
@@ -66,7 +66,7 @@ export default function HomePage() {
 
           <div className="intelligence_grid">
             <section className="card intel_panel">
-              <div className="intel_title"><h3>Campaign intelligence</h3><span>Live from your workspace</span></div>
+              <div className="intel_title"><h3>Campaign intelligence</h3><span>Live from your workshop</span></div>
               <div className="intel_meter"><span style={{ width: `${successRate}%` }} /></div>
               <div className="intel_list">
                 <div className="intel_chip"><strong>{latest ? formatDate(latest.created_at) : "—"}</strong><span>latest campaign</span></div>
