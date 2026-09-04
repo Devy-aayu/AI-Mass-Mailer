@@ -59,281 +59,53 @@ export default function HomePage() {
   return (
     <div className="app_shell">
       <TopNavigation />
-
       <main className="page">
         <section className="dashboard_hero">
-          <div className="hero_brand">
-            <div className="hero_logo">R</div>
-
-            <div className="hero_brand_name">
-              Ritmailer
-            </div>
-          </div>
-
-          <div className="hero_content">
-            <div className="eyebrow">
-              Ritmailer
-            </div>
-
-            <h2>
-              Send mails in one click.
-              <br />
-              Make every message personal.
-            </h2>
-
-            <p>
-              Bring a coffee import the list and sit back
-              to your chair and relax let ritmailer do
-              everything
-            </p>
-          </div>
-
-          <div className="hero_note">
-            <strong>{successRate}%</strong>
-            <span>success rate</span>
-          </div>
-        </section>
-
-        <div className="page_header">
-          <div>
-            <div className="eyebrow">
-              Your workshop
-            </div>
-
-            <h1 className="page_title">
-              Campaigns
-            </h1>
-
-            <p className="page_description">
-              A single view of recipients, delivery and
-              campaign health.
-            </p>
-          </div>
-
-          <Link
-            href="/upload"
-            className="btn btn_primary"
-          >
-            + New campaign
-          </Link>
+        <div className="hero_brand">
+          <span className="hero_logo">R</span>
+          <span className="hero_name">
+            Ritmailer
+          </span>
         </div>
-
-        <div className="stats_grid">
+        <div className="hero_stats">
           <Stat
             label="Recipients"
-            value={String(stats.recipients)}
-            change={`${campaigns.length} campaign${
-              campaigns.length === 1 ? "" : "s"
+            value={stats.recipients.toString()}
+            change={`+${stats.recipients} this month`}
+          />
+          <Stat
+            label="Sent"
+            value={stats.sent.toString()}
+            change={`+${stats.sent} this month`}
+          />
+          <Stat
+            label="Failed"
+            value={stats.failed.toString()}
+            change={`+${stats.failed} this month`}
+          />
+          <Stat
+            label="Success rate"
+            value={`${successRate}%`}
+            change={`${
+              successRate >= 90 ? "Good" : "Needs improvement"
             }`}
           />
 
-          <Stat
-            label="Sent"
-            value={String(stats.sent)}
-            change="Recorded by Ritmailer"
-          />
-
-          <Stat
-            label="Failed"
-            value={String(stats.failed)}
-            change={
-              stats.failed
-                ? "Needs attention"
-                : "No failures"
-            }
-          />
-
-          <Stat
-            label="Success"
-            value={`${successRate}%`}
-            change="Sent / total attempts"
-          />
+        <Link 
+          href="/campaigns"
+          className="btn btn_primary"
+        >
+          View all campaigns
+        </Link>
+        <Link 
+          href="/upload"
+          className="btn btn_secondary"
+        >
+          Create new campaign
+        </Link>
+        
         </div>
-
-        <div className="intelligence_grid">
-          <section className="card intel_panel">
-            <div className="intel_title">
-              <h3>Campaign intelligence</h3>
-
-              <span>
-                Live from your workshop
-              </span>
-            </div>
-
-            <div className="intel_meter">
-              <span
-                style={{
-                  width: `${successRate}%`,
-                }}
-              />
-            </div>
-
-            <div className="intel_list">
-              <div className="intel_chip">
-                <strong>
-                  {latest
-                    ? formatDate(latest.created_at)
-                    : "—"}
-                </strong>
-
-                <span>
-                  latest campaign
-                </span>
-              </div>
-
-              <div className="intel_chip">
-                <strong>
-                  {attention}
-                </strong>
-
-                <span>
-                  campaigns with failures
-                </span>
-              </div>
-            </div>
-          </section>
-        </div>
-
-        {error && (
-          <div className="auth_error">
-            {error}
-          </div>
-        )}
-
-        <div className="card">
-          <div className="card_header">
-            <h2 className="card_title">
-              Campaign log
-            </h2>
-
-            <p className="card_description">
-              Open a campaign to inspect each recipient
-              and replay the send sequence.
-            </p>
-          </div>
-
-          <div
-            className="card_body"
-            style={{ padding: 0 }}
-          >
-            {loading ? (
-              <div
-                style={{
-                  padding: 24,
-                  color: "var(--muted)",
-                }}
-              >
-                Loading campaigns…
-              </div>
-            ) : campaigns.length === 0 ? (
-              <div style={{ padding: 30 }}>
-                <div
-                  style={{
-                    fontWeight: 800,
-                    marginBottom: 6,
-                  }}
-                >
-                  Your first campaign starts here.
-                </div>
-
-                <div
-                  style={{
-                    color: "var(--muted)",
-                    fontSize: 13,
-                    marginBottom: 16,
-                  }}
-                >
-                  Upload an Excel or CSV lead list to
-                  begin.
-                </div>
-
-                <Link
-                  href="/upload"
-                  className="btn btn_primary"
-                >
-                  Create campaign
-                </Link>
-              </div>
-            ) : (
-              <div className="table_wrap">
-                <table>
-                  <thead>
-                    <tr>
-                      <th>Campaign</th>
-                      <th>Recipients</th>
-                      <th>Sent</th>
-                      <th>Failed</th>
-                      <th>State</th>
-                      <th>Created</th>
-                    </tr>
-                  </thead>
-
-                  <tbody>
-                    {campaigns.map((campaign) => (
-                      <tr key={campaign.id}>
-                        <td>
-                          <Link
-                            href={`/campaigns/${encodeURIComponent(
-                              campaign.id
-                            )}`}
-                            style={{
-                              fontWeight: 800,
-                            }}
-                          >
-                            {campaign.name}
-                          </Link>
-
-                          <div
-                            style={{
-                              color:
-                                "var(--muted)",
-                              fontSize: 10,
-                              marginTop: 3,
-                            }}
-                          >
-                            {campaign.subject ||
-                              "No subject"}
-                          </div>
-                        </td>
-
-                        <td>
-                          {campaign.total_recipients}
-                        </td>
-
-                        <td>
-                          {campaign.sent_count}
-                        </td>
-
-                        <td>
-                          {campaign.failed_count}
-                        </td>
-
-                        <td>
-                          <Status
-                            status={
-                              campaign.status
-                            }
-                          />
-                        </td>
-
-                        <td
-                          style={{
-                            color:
-                              "var(--muted)",
-                          }}
-                        >
-                          {formatDate(
-                            campaign.created_at
-                          )}
-                        </td>
-                      </tr>
-                    ))}
-                  </tbody>
-                </table>
-              </div>
-            )}
-          </div>
-        </div>
+        </section>
       </main>
     </div>
   );
