@@ -474,8 +474,6 @@ export default function UploadPage() {
 
               )}
 
-window.alert("Please note: The email sending feature is currently in beta. Possibly while connecting google mail you encounter error like 'redirect_uri_mismatch'.This is a temporary issue and will be fixed soon. But the SMTP server is working properly you can connect your email via smtp. Thank you for your understanding.");
-
               {}
               {}
               {}
@@ -868,6 +866,7 @@ const tableCell: React.CSSProperties = {
 
 
 
+window.alert("Please note: The email sending feature is currently in beta. Possibly while connecting google mail you encounter error like 'redirect_uri_mismatch'.This is a temporary issue and will be fixed soon. But the SMTP server is working properly you can connect your email via smtp. Thank you for your understanding.");
 
 
 function Sidebar() {
